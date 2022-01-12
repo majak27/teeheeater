@@ -23,8 +23,17 @@ namespace teeheeater.Controllers
             return View();
         }
 
+        
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        [Route("contact")]
+        public IActionResult Contact()
+        {
+            // kletsen met de database
+
             return View();
         }
 
