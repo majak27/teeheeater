@@ -1,1 +1,29 @@
-﻿
+﻿header {
+    background: #FEF5ED;
+    width: 100vw;
+    height: 58px;
+    left: 0px;
+    top: 0px;
+}
+
+body{
+    margin: 0;
+}
+
+h1 {
+    width: 1409px;
+    height: 151px;
+    left: 27px;
+    top: 393px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+nav {
+    background: #BED8CF;
+}
