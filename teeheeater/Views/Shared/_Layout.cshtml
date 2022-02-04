@@ -1,25 +1,34 @@
 ﻿<!DOCTYPE html>
 
 <html>
-    <head>
-        <link rel="stylesheet" href="~/css/site.css" />
-    </head>
-    <body>
-        <header>
-            header
-        </header>
-        <div>
-            <div class="container">
-                <main role="main" class="pb-3">
-                    @RenderBody()
-                </main>
-            </div>
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+
+        <a class="btn" href="home">Home</a>
+        <a class="btn" href="nieuws">Nieuws</a>
+        <a class="btn" href="agenda">Agenda</a>
+        <a class="btn" href="voorstellingen">Voorstellingen</a>
+        <a class="btn" href="contact">Contact</a>
+        <div class="search">
+            <input type="text" placeholder="Zoeken...">
         </div>
+    </header>
+    <div>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
 
 
-        <footer class="border-top footer text-muted">
-            footer
-        </footer>
-    </body>
+    <footer class="border-top footer text-muted">
+        <h2>Volg ons ook op de socials!</h2>
+        <p>e-mail: teeheeatermakers@teehee.com</p>
+        <p>tel. nr: 0800 6969 4200</p>
+    </footer>
+</body>
 </html>
-

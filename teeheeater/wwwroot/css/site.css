@@ -1,13 +1,55 @@
 ﻿header {
+    display: flex;
+    justify-content: flex-end;
     background: #FEF5ED;
     width: 100vw;
-    height: 58px;
+    height: 50px;
     left: 0px;
     top: 0px;
 }
 
-body{
+.btn {
+    width: 118px;
+    height: 35px;
+    top: 6px;
+    background: #963F2D;
+    border-radius: 5px;
+    margin: 5px;
+    top: -40px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration-line: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: #FEF5ED;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+    .btn:hover {
+        background: #cf5215;
+        opacity: 0.8;
+    }
+
+.search {
+    width: 250px;
+    height: 39px;
+    left: 1133px;
+    top: 6px;
+    background: rgba(150, 63, 45, 0.4);
+    border-radius: 5px;
+    margin: 5px;
+}
+
+body {
     margin: 0;
+}
+
+.img {
+    display: flex;
 }
 
 h1 {
@@ -21,9 +63,44 @@ h1 {
     line-height: 60px;
     display: flex;
     align-items: center;
-    color: #FFFFFF;
+    color: #963F2D;
 }
 
-nav {
+/*homepagina mini agenda*/
+.mini_agenda {
+    height: 280px;
     background: #BED8CF;
+    display: flex;
+    align-items: center;
+}
+
+.agenda_btn {
+    width: 23vw;
+    height: 260px;
+    background: #0CAFA9;
+    opacity: 0.4;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+    .agenda_btn:hover {
+        opacity: 0.8;
+    }
+
+footer {
+    width: 100vw;
+    height: 160px;
+    left: 0px;
+    top: 992px;
+    background: #ED6F00;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
 }
