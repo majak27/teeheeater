@@ -3,4 +3,11 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<form>
+Voornaam: <input type="text" name="voornaam" />
+Achternaam: <input type="text" name="achternaam" />
+    <input type="submit" value="verstuur" />
+</form>
+
+<p>Welkom @ViewBag["voorNaam"] @ViewBag["achterNaam"]  </p>
+  
