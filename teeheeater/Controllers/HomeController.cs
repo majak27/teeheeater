@@ -28,11 +28,13 @@ namespace teeheeater.Controllers
         {
             return View();
         }
-
+        [HttpPost]
         [Route("contact")]
-        public IActionResult Contact()
+        public IActionResult Contact(string voorNaam, string achterNaam)
+
         {
-            // kletsen met de database
+            ViewData[voorNaam] = voorNaam;
+            ViewDate[achterNaam] = achterNaam;
 
             return View();
         }
