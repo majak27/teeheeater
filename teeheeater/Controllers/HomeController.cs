@@ -12,6 +12,9 @@ namespace teeheeater.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private int lastName;
+
+        public object ViewDate { get; private set; }
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -30,11 +33,11 @@ namespace teeheeater.Controllers
         }
         [HttpPost]
         [Route("contact")]
-        public IActionResult Contact(string voorNaam, string achterNaam)
+        public IActionResult Contact(string firstName, string achterNaam)
 
         {
-            ViewData[voorNaam] = voorNaam;
-            ViewDate[achterNaam] = achterNaam;
+            ViewData[firstName] = firstName;
+            ViewDate[lastName] = lastName;
 
             return View();
         }
