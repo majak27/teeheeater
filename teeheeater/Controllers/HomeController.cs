@@ -26,18 +26,32 @@ namespace teeheeater.Controllers
             return View();
         }
 
-        [Route("privacy")]
-        public IActionResult Privacy()
+        [Route("agenda")]
+        public IActionResult Agenda()
         {
             return View();
         }
+
+        [Route("nieuws")]
+        public IActionResult Nieuws()
+        {
+            return View();
+        }
+
+        [Route("voorstellingen")]
+        public IActionResult Voorstellingen()
+        {
+            return View();
+        }
+
+
         [HttpPost]
         [Route("contact")]
         public IActionResult Contact(string firstName, string achterNaam)
 
         {
-            ViewData[firstName] = firstName;
-            ViewDate[lastName] = lastName;
+            //ViewData[firstName] = firstName;
+            //ViewData[lastName] = lastName;
 
             return View();
         }
