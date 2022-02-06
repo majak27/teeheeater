@@ -1,0 +1,47 @@
+﻿/*nieuws pagina css*/
+
+.nieuws_body {
+    background: #963F2D;
+    display: flex;
+}
+
+.img{
+    width: 50%;
+}
+
+.nieuws_tekst {
+    width: 50%;
+    margin: 35px;
+}
+
+h1 {
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 70px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #963F2D;
+}
+
+h2 {
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 50px;
+    color: #FFFFFF;
+}
+
+p {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}

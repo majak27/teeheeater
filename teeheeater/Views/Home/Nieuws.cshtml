@@ -1,6 +1,22 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Nieuws";
 }
-<h1>@ViewData["Title"]</h1>
+<head>
+    <link rel="stylesheet" href="~/css/nieuws.css" />
+</head>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="subheader">
+    <h1>@ViewData["Title"]</h1>
+</div>
+
+<div class="nieuws_body">
+    <div class="img">
+        <img src="~/img/corona.png" width="100%" height="100%">
+    </div>
+    <div class="nieuws_tekst">
+        <h2>Coronatoegansbewijs: wat zijn de regels?</h2>
+        <p>In verband met het huidige Corona beleid hanteren wij helaas een 3G maatregel. Iedereen moet bij binnenkomst een QR code kunnen laten zien. Dit houdt dus in dat iedere bezoeker getest, gevaccineerd of genezen van het Corona virus moet zijn.</p>
+        <p>In de zaal worden er twee stoelen tussen ieder groepje vrijgehouden zodat we de 1,5 meter regel aan kunnen houden.</p>
+        <p>Hopelijk kunnen we snel weer terug naar de oude situatie en mogen we weer volle zalen verwelkomen!</p>
+    </div>
+</div>
