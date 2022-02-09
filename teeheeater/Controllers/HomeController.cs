@@ -44,14 +44,19 @@ namespace teeheeater.Controllers
             return View();
         }
 
+        [Route("contact")]
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
 
         [HttpPost]
-        [Route("contact")]
-        public IActionResult Contact(string firstName, string achterNaam)
+        public IActionResult Contact(Person person)
 
         {
-            //ViewData[firstName] = firstName;
-            //ViewData[lastName] = lastName;
+            ViewData["firstName"] = person.FirstName;
+            ViewData["lastName"] = person.LastName;
 
             return View();
         }
