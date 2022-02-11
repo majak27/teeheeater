@@ -52,8 +52,8 @@ namespace teeheeater.Controllers
         }
 
         [HttpPost]
+        [Route("contact")]
         public IActionResult Contact(Person person)
-
         {
             ViewData["firstName"] = person.FirstName;
             ViewData["lastName"] = person.LastName;
