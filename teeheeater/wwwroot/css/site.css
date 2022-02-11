@@ -51,11 +51,14 @@
 
 body {
     margin: 0;
-    background: background: #FEF5ED;
+    background: #FEF5ED;
 }
 
 .nieuws_item {
-    background-image: url("~/img/theater.png");
+    background-image: url("/img/theater.png");
+    width: 100%;
+    height: 500px;
+    align-items: flex-end;
 }
 
 h1 {
@@ -66,7 +69,19 @@ h1 {
     line-height: 60px;
     display: flex;
     align-items: center;
-    color: #963F2D;
+}
+
+h2 {
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    color: white;
+    display: flex;
+    align-content: flex-end;
 }
 
 /*homepagina mini agenda*/
