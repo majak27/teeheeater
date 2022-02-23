@@ -1,0 +1,47 @@
+﻿h1 {
+    display: flex;
+    justify-content: center;
+    color: #0CAFA9;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-family: Open Sans;
+    font-size: 25px;
+    margin: 0;
+    line-height: 35px;
+    color: #0CAFA9;
+}
+
+.agenda_body {
+    width: 100vw;
+    height: 1000px;
+    padding: 5px;
+    background-color: #BED8CF;
+    display: flex;
+    flex-direction: column;
+}
+
+.agendaBody{
+    display: flex;
+}
+
+.agendaBtn {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    height: 170px;
+    width: 45vw;
+    padding: 10px;
+    background-color: #0CAFA9;
+    color: white;
+    opacity: 0.2;
+    font-family: josefin sans;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    .agendaBtn:hover {
+        opacity: 0.4;
+    }
