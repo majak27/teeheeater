@@ -1,13 +1,20 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿@model teeheeater.Models.Person
+@{
+    ViewData["Title"] = "Contact";
 }
 <h1>@ViewData["Title"]</h1>
 
 <form method="post">
-Voornaam: <input type="text" name="firstname" />
-Achternaam: <input type="text" name="lastname" />
-<input type="submit" value="verstuur" />
+    <div>Voornaam: <input type="text" name="firstname" /></div>
+    <div>Achternaam: <input type="text" name="lastname" /></div>
+    <div>Email: <input type="text" name="lastname" /></div>
+    <div>Telefoon: <input type="text" name="lastname" /></div>
+    <div>Adres: <input type="text" name="lastname" /></div>
+    <div>Beschrijving: <input type="text" name="lastname" /></div>
+    <input type="submit" value="verstuur" />
 </form>
 
-<p>Welkom @ViewData["firstName"]   @ViewData["lastName"]  </p>
+@if (Model != null) { 
+<p>Hallo @Model.FirstName   @Model.LastName  </p>
+}
   

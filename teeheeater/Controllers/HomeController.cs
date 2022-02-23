@@ -55,10 +55,7 @@ namespace teeheeater.Controllers
         [Route("contact")]
         public IActionResult Contact(Person person)
         {
-            ViewData["firstName"] = person.FirstName;
-            ViewData["lastName"] = person.LastName;
-
-            return View();
+            return View(person);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
