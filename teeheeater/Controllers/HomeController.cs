@@ -55,10 +55,12 @@ namespace teeheeater.Controllers
         [Route("contact")]
         public IActionResult Contact(Person person)
         {
-            ViewData["firstName"] = person.FirstName;
-            ViewData["lastName"] = person.LastName;
+            // hebben we alles goed ingevuld? dan sturen we de gebruiker door naar de succes pagina
+            if (ModelState.IsValid)
+                return Redirect("/succes");
 
-            return View();
+            // niet goed? dan sturen we de gegevens door naar de view, zodat we de fouten kunnen tonen
+            return View(person);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
