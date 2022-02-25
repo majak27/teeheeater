@@ -172,3 +172,8 @@ footer {
     justify-content: center;
     color: white;
 }
+
+.contactForm label {
+    width: 200px;
+    display: inline-block;
+}
