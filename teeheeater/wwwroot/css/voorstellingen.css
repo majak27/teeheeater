@@ -1,7 +1,14 @@
-﻿h1 {
+﻿* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: Josefin Sans;
+    font-weight: bold;
     display: flex;
+    align-items: center;
     justify-content: center;
-    color: #0CAFA9;
+    color: #ED6F00;
 }
 
 h2 {
@@ -11,38 +18,42 @@ h2 {
     font-size: 25px;
     margin: 0;
     line-height: 35px;
-    color: #0CAFA9;
+    color: #ED6F00;
 }
 
-.agenda_body {
+img {
+    height: 100%;
+    width: 50%;
+}
+
+.voorstellingen_body {
     width: 100vw;
     height: 1000px;
     padding: 5px;
-    background-color: #BED8CF;
+    background-color: #FCCE8E;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.agendaBody{
+.voorstellingenBody {
     display: flex;
 }
 
-.agendaBtn {
+.voorstellingenBtn {
     display: flex;
-    flex-direction: column;
-    margin: 20px;
-    height: 170px;
+    flex-direction: row;
+    height: 335px;
     width: 45vw;
+    margin: 20px;
     padding: 10px;
-    background-color: #0CAFA9;
+    background-color: rgba(255, 255, 255, 0.7);
     color: white;
-    opacity: 0.2;
     font-family: josefin sans;
     text-decoration: none;
     transition: 0.3s;
 }
 
-    .agendaBtn:hover {
-        opacity: 0.4;
+    .voorstellingenBtn:hover {
+        background-color: rgba(255, 255, 255, 0.5);
     }

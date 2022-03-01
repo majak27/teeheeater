@@ -16,10 +16,7 @@
 
 h1 {
     font-family: Josefin Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 70px;
-    line-height: 70px;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
