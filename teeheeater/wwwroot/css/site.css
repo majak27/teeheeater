@@ -12,6 +12,32 @@ header {
     top: 0px;
 }
 
+.breadcrumbs {
+    padding: 5px;
+    margin: 0px;
+    font-family: Open Sans;
+}
+
+.breadcrumbs__item {
+    display: inline-block;
+}
+
+    .breadcrumbs__item:not(:last-of-type)::after {
+        content: "/";
+        color: #963F2D;
+        opacity: 0.4;
+    }
+
+.breadcrumbs__link {
+    text-decoration: none;
+    color: #FCCE8E;
+}
+
+.breadcrumbs__link--active {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ED6F00;
+}
 .btn {
     width: 118px;
     height: 35px;

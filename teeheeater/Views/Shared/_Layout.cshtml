@@ -25,6 +25,15 @@
     </header>
     <div>
         <div class="container">
+            <h1>@ViewData["Title"]</h1>
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="" class="breadcrumbs__link">home</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="" class="breadcrumbs__link breadcrumbs__link--active">@ViewData["Title"]</a>
+                </li>
+            </ul>
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>

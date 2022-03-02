@@ -14,6 +14,33 @@ h2 {
     color: #0CAFA9;
 }
 
+.breadcrumbs {
+    padding: 5px;
+    margin: 0px;
+    font-family: Open Sans;
+}
+
+.breadcrumbs__item {
+    display: inline-block;
+}
+
+    .breadcrumbs__item:not(:last-of-type)::after {
+        content: "/";
+        color: #963F2D;
+        opacity: 0.4;
+    }
+
+.breadcrumbs__link {
+    text-decoration: none;
+    color: #BED8CF;
+}
+
+.breadcrumbs__link--active {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0CAFA9;
+}
+
 .agenda_body {
     width: 100vw;
     height: 1000px;
