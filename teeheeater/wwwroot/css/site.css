@@ -127,30 +127,41 @@ h2 {
 
 /*homepagina mini agenda*/
 .mini_agenda {
-    height: 280px;
+    height: 350px;
     background: #BED8CF;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.agenda_btn {
-    width: 24.5vw;
-    height: 260px;
+.agendaCard {
+    width: 25vw;
+    height: 300px;
     background: #0CAFA9;
-    opacity: 0.4;
     border-radius: 2px;
     text-decoration: none;
     transition: 0.3s;
+    border-radius: 3px;
     margin: 5px;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    flex-direction: column;
+    font-family: Open Sans;
+    color: white;
 }
 
-     .agenda_btn:hover {
+     .agendaCard:hover {
         opacity: 0.8;
      }
+
+ .cardImage {
+     height: 100px;
+     border-radius: 3px;
+ }
+
+.btn-primary {
+    color: #fff;
+    background-color: #ED6F00;
+}
 
 .agenda_btn2 {
     width: 24vw;
