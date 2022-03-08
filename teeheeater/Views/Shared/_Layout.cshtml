@@ -3,6 +3,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/js/site.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
@@ -28,10 +30,10 @@
             <h1>@ViewData["Title"]</h1>
             <ul class="breadcrumbs">
                 <li class="breadcrumbs__item">
-                    <a href="" class="breadcrumbs__link">home</a>
+                    <a href="/" class="breadcrumbs__link">home</a>
                 </li>
                 <li class="breadcrumbs__item">
-                    <a href="" class="breadcrumbs__link breadcrumbs__link--active">@ViewData["Title"]</a>
+                    <a href="/@ViewData["Title"]" class="breadcrumbs__link breadcrumbs__link--active">@ViewData["Title"]</a>
                 </li>
             </ul>
             <main role="main" class="pb-3">
