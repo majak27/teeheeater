@@ -1,5 +1,109 @@
-﻿* {
+﻿@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+*, *:before, *:after {
     box-sizing: border-box;
+}
+
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider {
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.slider__nav {
+    width: 12px;
+    height: 12px;
+    margin: 2rem 12px;
+    border-radius: 50%;
+    z-index: 10;
+    outline: 6px solid #FEF5ED;
+    outline-offset: -6px;
+    box-shadow: 0 0 0 0 #ED6F00, 0 0 0 0 rgba(51, 51, 51, 0);
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: 0.3s;
+}
+    .slider__nav:hover {
+        outline: 6px solid #ED6F00;
+        opacity: 0.6
+    }
+
+    .slider__nav:checked {
+        -webkit-animation: check 0.4s linear forwards;
+        animation: check 0.4s linear forwards;
+        outline: 6px solid #ED6F00;
+    }
+
+        .slider__nav:checked:nth-of-type(1) ~ .slider__inner {
+            left: 0%;
+        }
+
+        .slider__nav:checked:nth-of-type(2) ~ .slider__inner {
+            left: -100%;
+        }
+
+        .slider__nav:checked:nth-of-type(3) ~ .slider__inner {
+            left: -200%;
+        }
+
+        .slider__nav:checked:nth-of-type(4) ~ .slider__inner {
+            left: -300%;
+        }
+
+.slider__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 100%;
+    -webkit-transition: left 0.4s;
+    transition: left 0.4s;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+}
+
+.slider__contents {
+    height: 100%;
+    display: flex;
+}
+
+.slider__txt {
+    color: #999;
+    background: #963F2D;
+    display: flex;
 }
 
 header {
@@ -94,12 +198,13 @@ body {
     margin-left: 0;
 }
 
-.nieuws_item1 {
-    background-image: url("/img/theater.png");
-    background-repeat: no-repeat;
+.nieuws_item {
     background-size: cover;
-    height: 500px;
     align-items: flex-end;
+}
+
+.image_nieuws {
+    position: absolute;
 }
 
 h1 {

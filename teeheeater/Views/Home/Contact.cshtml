@@ -11,18 +11,42 @@
     <h2> Meld je aan voor onze nieuwsbrief! </h2>
     <form method="post" class="contactForm">
 
-        @Html.LabelFor(m => m.FirstName)
-        @Html.TextBoxFor(m => m.FirstName)
-        @Html.ValidationMessageFor(m => m.FirstName)
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName)
+            @Html.ValidationMessageFor(m => m.FirstName)
+        </div>
 
-        <div>Achternaam: <input type="text" name="lastname" /></div>
-        @Html.ValidationMessageFor(m => m.LastName)
-        <div>Email: <input type="text" name="email" /></div>
-        @Html.ValidationMessageFor(m => m.Email)
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName)
+            @Html.ValidationMessageFor(m => m.LastName)
+        </div>
 
-        <div>Telefoon: <input type="text" name="phone" /></div>
-        <div>Adres: <input type="text" name="address" /></div>
-        <div>Beschrijving: <input type="text" name="address" /></div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Phone)
+            @Html.TextBoxFor(m => m.Phone)
+            @Html.ValidationMessageFor(m => m.Phone)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Address)
+            @Html.TextBoxFor(m => m.Address)
+            @Html.ValidationMessageFor(m => m.Address)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Description)
+            @Html.TextBoxFor(m => m.Description)
+            @Html.ValidationMessageFor(m => m.Description)
+        </div>
+
         <input type="submit" value="verstuur" />
     </form>
 
