@@ -108,12 +108,24 @@ body {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     background: #FEF5ED;
     width: 100vw;
     height: 50px;
     left: 0px;
     top: 0px;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    height: 100px;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .breadcrumbs {
