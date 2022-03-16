@@ -63,6 +63,15 @@ namespace teeheeater.Controllers
             return View(person);
         }
 
+        [Route("succes")]
+        public IActionResult Succes()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
