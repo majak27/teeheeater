@@ -1,9 +1,10 @@
 ﻿@{
     ViewData["Title"] = "agenda";
 }
-<head>
-    <link rel="stylesheet" href="~/css/agenda.css" />
-</head>
+
+@section script {
+    <link href="~/css/agenda.css" rel="stylesheet">
+}
 
 <div class="agenda_body">
     <div class="agenda_top">
@@ -11,14 +12,56 @@
     </div>
     <div class="agendaBody">
         <div class="row">
-            <a class="agendaBtn" href="Welcome to my life">Welcome to my life</a>
-            <a class="agendaBtn" href="De uren die vliegen">De uren die vliegen</a>
-            <a class="agendaBtn" href="Romeo en Julia">Romeo en Julia</a>
+            <a class="agendaBtn" href="#">
+                <img src="~/img/welcome_to_my_life.png">
+                <div class="btnText">
+                    <h3>Welcome to my life</h3>
+                    <p>7 december</p>
+                    <p>15:00 - 16:45</p>
+                </div>
+            </a>
+            <a class="agendaBtn" href="#">
+                <img src="~/img/uren_die_vliegen.png">
+                <div class="btnText">
+                    <h3>De uren die vliegen</h3>
+                    <p>7 december</p>
+                    <p>15:00 - 16:45</p>
+                </div>
+            </a>
+            <a class="agendaBtn" href="#">
+                <img src="~/img/romeo_en_julia.png">
+                <div class="btnText">
+                    <h3>Romeo en Julia</h3>
+                    <p>7 december</p>
+                    <p>15:00 - 16:45</p>
+                </div>
+            </a>
         </div>
         <div class="row">
-            <a class="agendaBtn" href="Welcome to my life">Welcome to my life</a>
-            <a class="agendaBtn" href="De uren die vliegen">De uren die vliegen</a>
-            <a class="agendaBtn" href="Romeo en Julia">Romeo en Julia</a>
+            <a class="agendaBtn" href="#">
+                <img src="~/img/love_hate_djenz.png">
+                <div class="btnText">
+                    <h3>Love, Hate and Djenz</h3>
+                    <p>7 december</p>
+                    <p>15:00 - 16:45</p>
+                </div>
+            </a>
+            <a class="agendaBtn" href="#">
+                <img src="~/img/dance_daisy.png">
+                <div class="btnText">
+                    <h3>Dance, Daisy, Dance</h3>
+                    <p>7 december</p>
+                    <p>15:00 - 16:45</p>
+                </div>
+            </a>
+            <a class="agendaBtn" href="#">
+                <img src="~/img/maria_magdalena.png">
+                <div class="btnText">
+                    <h3>Maria Magdalena Superstar</h3>
+                    <p>7 december</p>
+                    <p>15:00 - 16:45</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>

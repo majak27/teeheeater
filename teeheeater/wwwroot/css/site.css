@@ -102,6 +102,7 @@ body {
 
 .slider__txt {
     color: #999;
+    width: 100vw;
     background: #963F2D;
     display: flex;
 }
@@ -211,6 +212,7 @@ body {
 }
 
 .nieuws_item {
+    width: 100vw;
     background-size: cover;
     align-items: flex-end;
 }
@@ -275,28 +277,24 @@ h2 {
      border-radius: 3px;
  }
 
+.card-title {
+    font-family: Josefin Sans;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0px;
+    padding: 10px;
+}
+
+ .card-text{
+     padding: 10px;
+     margin: 0px;
+ }
+
 .btn-primary {
     color: #fff;
     background-color: #ED6F00;
 }
 
-.agenda_btn2 {
-    width: 24vw;
-    height: 260px;
-    background: rgba(12, 175, 169, 0.1);
-    opacity: 0.4;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: 0.3s;
-    margin: 5px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-    .agenda_btn2:hover {
-        opacity: 0.8;
-    }
 
 .agenda_btn3 {
     width: 210px;
@@ -334,6 +332,11 @@ footer {
     flex-direction: column;
     justify-content: center;
     color: white;
+}
+
+.logo2{
+    display:flex;
+    justify-content: flex-end;
 }
 
 .contactForm label {

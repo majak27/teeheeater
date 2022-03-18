@@ -1,8 +1,5 @@
 ﻿/*nieuws pagina css*/
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
-
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -128,7 +125,7 @@ body {
 
 .img{
     height: 640px;
-    width: 50%;
+    display:flex;
 }
 
 .nieuws_tekst {
@@ -161,6 +158,6 @@ p {
     font-size: 23px;
     line-height: 31px;
     display: flex;
-    align-items: center;
+    text-align: left;
     color: #FFFFFF;
 }
