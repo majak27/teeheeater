@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using teeheeater.Database;
 using teeheeater.Models;
 
 namespace teeheeater.Controllers
@@ -23,7 +24,20 @@ namespace teeheeater.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            // alle producten ophalen
+            var rows = DatabaseConnector.GetRows("select * from product");
+
+            // lijst maken om alle namen in te stoppen
+            List<string> names = new List<string>();
+
+            foreach (var row in rows)
+            {
+                // elke naam toevoegen aan de lijst met namen
+                names.Add(row["naam"].ToString());
+            }
+
+            // de lijst met namen in de html stoppen
+            return View(names);
         }
 
         [Route("agenda")]
