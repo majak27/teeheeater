@@ -13,8 +13,11 @@ namespace teeheeater.Models
         public string LastName { get; set; }
         [Required(ErrorMessage = "Emailadres is verplicht")]
         [EmailAddress(ErrorMessage = "Geen geldig email adres")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
+        [Display(Name = "Telefoon")]
         public string Phone { get; set; }
+        [Display(Name = "Adres")]
         public string Address { get; set; }
         [Required(ErrorMessage = "Bericht is verplicht")]
         [Display(Name = "Bericht")]
