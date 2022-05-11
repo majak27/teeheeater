@@ -89,6 +89,40 @@ namespace teeheeater.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [Route("product/{id}")]
+        public IActionResult ProductDetails(int id)
+        {
+            var product = GetProduct(id);
+            return View(product);
+        }
+        public IActionResult Agenda()
+        {
+            return View();
+        }
+
+        public Product GetProduct (int id)
+        {
+            // alle producten ophalen uit de database
+            var rows = DatabaseConnector.GetRows("Select * from product");
+
+            // lijst maken om alle producten in te stoppen
+            List<Product> products = new List<Product>();
+
+            foreach (var row in rows)
+            {
+                // Voor elke rij maken we nu een product
+                Product p = new Product();
+                p.Naam = row["naam"].ToString();
+                p.Prijs = row["prijs"].ToString();
+                p.Beschikbaarheid = Convert.ToInt32(row["beschikbaarheid"]);
+                p.Id = Convert.ToInt32(row["Id"]);
+
+                // en dat product voegen we toe aan de lijst met producten
+                products.Add(p);
+            }
+            return products;
+        }
         public List<Product> GetAllProducts()
         {
             // alle producten ophalen uit de database
