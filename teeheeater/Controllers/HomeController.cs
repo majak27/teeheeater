@@ -106,7 +106,8 @@ namespace teeheeater.Controllers
             // alle producten ophalen uit de database
             var rows = DatabaseConnector.GetRows("Select * from product");
 
-            // lijst maken om alle producten in te stoppen
+            // lijst maken om alle producten in te stoppen                                                                                                                                              qqq
+
             List<Product> products = new List<Product>();
 
             foreach (var row in rows)
