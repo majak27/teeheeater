@@ -1,8 +1,10 @@
-﻿@model List<string>
+﻿@model List<Product>
+@using ReadDatabase.Database
+@using teeheeater.Database;
+
 @{
     ViewData["Title"] = "home";
 }
-
 
 @section script {
     <link href="~/css/site.css" rel="stylesheet">
@@ -72,8 +74,11 @@
 </div>
 
 <div>
-    @foreach(string naam in Model)
+    <ul>
+    @foreach(var product in Model)
     {
-        <p>@naam</p>
+        <li>@product.Naam - @product.Prijs - @product.Beschikbaarheid</li>
     }
+    </ul>
+    
 </div>
