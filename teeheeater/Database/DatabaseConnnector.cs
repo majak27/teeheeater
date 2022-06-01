@@ -11,7 +11,7 @@ namespace teeheeater.Database
             // stel in waar de database gevonden kan worden
             string connectionString = "Server=172.16.160.21;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
             // string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
-            
+
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
 

@@ -1,5 +1,4 @@
-﻿@model List<Product>
-@using ReadDatabase.Database
+﻿@model List<string>
 @using teeheeater.Database;
 
 @{
@@ -75,9 +74,9 @@
 
 <div>
     <ul>
-    @foreach(var product in Model)
+    @foreach(string naam in Model)
     {
-        <li>@product.Naam - @product.Prijs - @product.Beschikbaarheid</li>
+        <li>@naam</li>
     }
     </ul>
     
