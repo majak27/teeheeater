@@ -14,7 +14,7 @@ namespace teeheeater.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private int lastName;
+        // private int lastName;
 
         public object ViewDate { get; private set; }
 
@@ -25,20 +25,7 @@ namespace teeheeater.Controllers
 
         public IActionResult Index()
         {
-            // alle producten ophalen
-            var rows = DatabaseConnector.GetRows("select * from product");
-
-            // lijst maken om alle namen in te stoppen
-            List<string> names = new List<string>();
-
-            foreach (var row in rows)
-            {
-                //elke naam toevoegen aan de lijst met namen
-                names.Add(row["naam"].ToString());
-            }
-
-            //de lijst met namen in de html stoppen
-            return View(names);
+            return View();
         }
 
         [Route("nieuws")]
@@ -53,9 +40,16 @@ namespace teeheeater.Controllers
             return View();
         }
 
-        [Route("contact")]
+        [Route("voorstellingen/{id}")]
+        public IActionResult VoorstellingenDetails(int id)
+        {
+            var Voorstelling = GetVoorstelling(id);
 
-        public IActionResult Contact()
+            return View(Voorstelling);
+        }
+
+        [Route("agenda")]
+        public IActionResult Agenda()
         {
             return View();
         }
@@ -84,61 +78,28 @@ namespace teeheeater.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        //[Route("product/{id}")]
-        //public IActionResult ProductDetails(int id)
-        //{
-        //    var product = GetProduct(id);
-        //    return View(product);
-        //}
-        //public IActionResult Agenda()
-        //{
-        //    return View();
-        //}
+        public List<Voorstellingen> GetVoorstelling(int id)
+        {
+            // alle producten ophalen uit de database
+            var rows = DatabaseConnector.GetRows($"select * from voorstellingen where id = {id}");
 
-        //public Product GetProduct (int id)
-        //{
-        //    // alle producten ophalen uit de database
-        //    var rows = DatabaseConnector.GetRows("Select * from product");
+            // lijst maken om alle producten in te stoppen
+            List<Voorstellingen> products = new List<Voorstellingen>();
 
-        //    // lijst maken om alle producten in te stoppen                                                                                                                                              qqq
+            foreach (var row in rows)
+            {
+                // Voor elke rij maken we nu een product
+                Voorstellingen p = new Voorstellingen();
+                p.Naam = row["Naam"].ToString();
+                p.Beschrijving = row["Beschrijving"].ToString();
+                p.Id = Convert.ToInt32(row["id"]);
 
-        //    List<Product> products = new List<Product>();
+                // en dat product voegen we toe aan de lijst met producten
+                products.Add(p);
+            }
 
-        //    foreach (var row in rows)
-        //    {
-        //        // Voor elke rij maken we nu een product
-        //        Product p = new Product();
-        //        p.Naam = row["naam"].ToString();
-        //        p.Prijs = row["prijs"].ToString();
-        //        p.Beschikbaarheid = Convert.ToInt32(row["beschikbaarheid"]);
-        //        p.Id = Convert.ToInt32(row["Id"]);
+            return products;
+        }
 
-        //        // en dat product voegen we toe aan de lijst met producten
-        //        products.Add(p);
-        //    }
-        //    return products;
-        //}
-        //public List<Product> GetAllProducts()
-        //{
-        //    // alle producten ophalen uit de database
-        //    var rows = DatabaseConnector.GetRows("Select * from product");
-
-        //    // lijst maken om alle producten in te stoppen
-        //    List<Product> products = new List<Product>();
-
-        //    foreach (var row in rows)
-        //    {
-        //        // Voor elke rij maken we nu een product
-        //        Product p = new Product();
-        //        p.Naam = row["naam"].ToString();
-        //        p.Prijs = row["prijs"].ToString();
-        //        p.Beschikbaarheid = Convert.ToInt32(row["beschikbaarheid"]);
-        //        p.Id = Convert.ToInt32(row["Id"]);
-
-        //        // en dat product voegen we toe aan de lijst met producten
-        //        products.Add(p);
-        //    }
-        //    return products;
-        //}
     }
 }
