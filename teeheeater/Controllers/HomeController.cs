@@ -43,9 +43,9 @@ namespace teeheeater.Controllers
         [Route("voorstellingen/{id}")]
         public IActionResult VoorstellingenDetails(int id)
         {
-            var Voorstelling = GetVoorstelling(id);
+            var voorstelling = GetVoorstelling(id);
 
-            return View(Voorstelling);
+            return View(voorstelling);
         }
 
         [Route("agenda")]
@@ -78,7 +78,7 @@ namespace teeheeater.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public List<Voorstellingen> GetVoorstelling(int id)
+        public Voorstellingen GetVoorstelling(int id)
         {
             // alle producten ophalen uit de database
             var rows = DatabaseConnector.GetRows($"select * from voorstellingen where id = {id}");
@@ -98,7 +98,7 @@ namespace teeheeater.Controllers
                 products.Add(p);
             }
 
-            return products;
+            return products[0];
         }
 
     }
