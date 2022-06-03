@@ -1,4 +1,7 @@
-﻿@{
+﻿@using teeheeater.Database
+@model List<Voorstellingen>
+
+@{
     ViewData["Title"] = "voorstellingen";
 }
 
@@ -6,12 +9,19 @@
     <link href="~/css/voorstellingen.css" rel="stylesheet">
 }
 
-<div class="voorstellingen_body">
-    @*<div class="voorstellingen_top">
-        <div class="search2">
-            <input type="text" placeholder="zoeken binnen voorstellingen...">
+ <div class="voorstellingenBody">
+@foreach(Voorstellingen p in Model)
+{
+    <a class="voorstellingenBtn" href="voorstellingen/{@p.Id}">
+        <img src="~/img/welcome_to_my_life.png">
+            <div class="btnText">
+            <h3>@p.Naam</h3>
+            <p>@p.Beschrijving</p>                   
         </div>
-    </div>*@
+    </a>
+}
+</div>
+
     <div class="voorstellingenBody">
         <div class="row">
             <a class="voorstellingenBtn" href="Welcome to my life">
