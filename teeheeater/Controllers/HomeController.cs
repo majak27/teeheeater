@@ -22,9 +22,9 @@ namespace teeheeater.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
+            ViewData["user"] = HttpContext.Session.GetString("User");
             return View();
         }
 
@@ -101,5 +101,14 @@ namespace teeheeater.Controllers
             return products[0];
         }
 
+    }
+    public IActionResult Login(string username, string password)
+    {
+        if (password == "geheim")
+        {
+            HttpContext.Session.SetString("User", username);
+            return redirect("/");
+        }
+        return View();
     }
 }
