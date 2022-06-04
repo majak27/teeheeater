@@ -1,47 +1,11 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 
-:root {
-    --bg: #f8fafc;
-    --panel-bg: #FFFFFF;
-    --panel-border: #CCCCCC;
-    --panel-title: #343f44;
-    --panel-text: #54666d;
-    --btn: #3eb0ef;
+*, *:before, *:after {
+    box-sizing: border-box;
 }
 
-#toggleMode {
-    visibility: hidden;
-}
-
-.toggleDark,
-.toggleLight {
-    cursor: pointer;
-    position: absolute;
-    z-index: 2;
-    top: 20px;
-    left: 20px;
-}
-
-.toggleDark {
-    display: block;
-    color: #222;
-}
-
-.toggleLight {
-    display: none;
-    color: white;
-}
-
-#toggleMode:checked ~ .toggleDark {
-    display: none;
-}
-
-#toggleMode:checked ~ .toggleLight {
-    display: block;
-}
-
-#container {
+header {
     display: flex;
     justify-content: space-between;
     background: #FEF5ED;
@@ -50,25 +14,6 @@
     left: 0px;
     top: 0px;
     transition: .4s ease;
-}
-
-#toggleMode:checked ~ #container {
-    --bg: #020202;
-    --panel-bg: #111413;
-    --panel-border: #1f2322;
-    --panel-title: #8e9294;
-    --panel-text: #505456;
-    --btn: #2962fe;
-    background-color: var(--bg);
-}
-
-.dark-mode {
-    background-color: black;
-    color: white;
-}
-
-*, *:before, *:after {
-    box-sizing: border-box;
 }
 
 .image_nieuws {
