@@ -50,5 +50,22 @@ namespace teeheeater.Database
             return rows;
         }
 
+        public static void SavePerson(Person person)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, email, bericht) VALUES(?voornaam, ?achternaam, ?email, ?bericht)", conn);
+
+                // Elke parameter moet je handmatig toevoegen aan de query
+                cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = person.FirstName;
+                cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = person.LastName;
+                cmd.Parameters.Add("?email", MySqlDbType.Text).Value = person.Email;
+                cmd.Parameters.Add("?telefoon", MySqlDbType.Text).Value = person.Email;
+                cmd.Parameters.Add("?adres", MySqlDbType.Text).Value = person.Email;
+                cmd.Parameters.Add("?bericht", MySqlDbType.Text).Value = person.Description;
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

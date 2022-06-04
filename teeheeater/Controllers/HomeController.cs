@@ -14,7 +14,7 @@ namespace teeheeater.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        // private int lastName;
+       // private int lastName;
 
         public object ViewDate { get; private set; }
 
@@ -63,6 +63,10 @@ namespace teeheeater.Controllers
         {
             // hebben we alles goed ingevuld? dan sturen we de gebruiker door naar de succes pagina
             if (ModelState.IsValid)
+
+                //persoon opslaan in de database
+                DatabaseConnector.SavePerson(person);
+
                 return Redirect("/succes");
 
             // niet goed? dan sturen we de gegevens door naar de view, zodat we de fouten kunnen tonen
