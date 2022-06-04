@@ -81,11 +81,17 @@ namespace teeheeater.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [Route("404")]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
+
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public IActionResult Error()
+        //{
+        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        //}
 
         public List<Voorstellingen> GetAllVoorstellingen()
         {
@@ -115,7 +121,7 @@ namespace teeheeater.Controllers
         public Voorstellingen GetVoorstelling(int id)
         {
             // alle producten ophalen uit de database
-            var rows = DatabaseConnector.GetRows($"select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id WHERE id = {id}");
+            var rows = DatabaseConnector.GetRows($"select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id WHERE voorstellingen.id = {id}");
 
             // lijst maken om alle producten in te stoppen
             List<Voorstellingen> products = new List<Voorstellingen>();
