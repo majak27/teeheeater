@@ -94,6 +94,7 @@ namespace teeheeater.Controllers
                 Voorstellingen p = new Voorstellingen();
                 p.Naam = row["Naam"].ToString();
                 p.Beschrijving = row["Beschrijving"].ToString();
+                p.Foto = row["Foto"].ToString();
                 p.Id = Convert.ToInt32(row["id"]);
 
                 // en dat product voegen we toe aan de lijst met producten
@@ -117,6 +118,7 @@ namespace teeheeater.Controllers
                 Voorstellingen p = new Voorstellingen();
                 p.Naam = row["Naam"].ToString();
                 p.Beschrijving = row["Beschrijving"].ToString();
+                p.Foto = row["Foto"].ToString();
                 p.Id = Convert.ToInt32(row["id"]);
 
                 // en dat product voegen we toe aan de lijst met producten
