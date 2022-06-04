@@ -94,6 +94,9 @@ body {
 
 .slider__contents {
     height: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
     text-align: center;
     display: -webkit-box;
     display: -webkit-flex;
@@ -118,14 +121,17 @@ body {
 
 .slider__txt {
     color: #999;
-    margin-bottom: 3rem;
     background: #963F2D;
     display: flex;
 }
 
-.img{
-    height: 640px;
+.slider_img{
+    height: 100%;
+    width: 50vw;
     display:flex;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 .nieuws_tekst {
@@ -155,9 +161,26 @@ p {
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 23px;
+    font-size: 15px;
     line-height: 31px;
     display: flex;
     text-align: left;
     color: #FFFFFF;
 }
+
+.overlay {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    width: 50vw;
+    transition: 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 60px;
+}
+
+    .overlay:hover {
+        opacity:1;
+    }

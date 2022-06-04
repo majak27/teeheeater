@@ -1,4 +1,7 @@
-﻿@{
+﻿@using teeheeater.Database
+@model List<Voorstellingen>
+
+@{
     ViewData["Title"] = "agenda";
 }
 
@@ -6,62 +9,16 @@
     <link href="~/css/agenda.css" rel="stylesheet">
 }
 
-<div class="agenda_body">
-    <div class="agenda_top">
-        <h2>februari 2022</h2>
-    </div>
-    <div class="agendaBody">
-        <div class="row">
-            <a class="agendaBtn" href="#">
-                <img src="~/img/welcome_to_my_life.png" class="agenda_img">
-                <div class="btnText">
-                    <h3>Welcome to my life</h3>
-                    <p>7 december</p>
-                    <p>15:00 - 16:45</p>
-                </div>
-            </a>
-            <a class="agendaBtn" href="#">
-                <img src="~/img/uren_die_vliegen.png" class="agenda_img">
-                <div class="btnText">
-                    <h3>De uren die vliegen</h3>
-                    <p>7 december</p>
-                    <p>15:00 - 16:45</p>
-                </div>
-            </a>
-            <a class="agendaBtn" href="#">
-                <img src="~/img/romeo_en_julia.png" class="agenda_img">
-                <div class="btnText">
-                    <h3>Romeo en Julia</h3>
-                    <p>7 december</p>
-                    <p>15:00 - 16:45</p>
-                </div>
-            </a>
-        </div>
-        <div class="row">
-            <a class="agendaBtn" href="#">
-                <img src="~/img/love_hate_djenz.png" class="agenda_img">
-                <div class="btnText">
-                    <h3>Love, Hate and Djenz</h3>
-                    <p>7 december</p>
-                    <p>15:00 - 16:45</p>
-                </div>
-            </a>
-            <a class="agendaBtn" href="#">
-                <img src="~/img/dance_daisy.png" class="agenda_img">
-                <div class="btnText">
-                    <h3>Dance, Daisy, Dance</h3>
-                    <p>7 december</p>
-                    <p>15:00 - 16:45</p>
-                </div>
-            </a>
-            <a class="agendaBtn" href="#">
-                <img src="~/img/maria_magdalena.png" class="agenda_img">
-                <div class="btnText">
-                    <h3>Maria Magdalena Superstar</h3>
-                    <p>7 december</p>
-                    <p>15:00 - 16:45</p>
-                </div>
-            </a>
-        </div>
-    </div>
+<div class="agendaBody">
+    @foreach (Voorstellingen voorstelling in Model)
+    {
+        <a class="agendaBtn" href="voorstellingen/@voorstelling.Id">
+            <img src="@voorstelling.Foto" class="agenda_img">
+            <div class="btnText">
+                <h3>@voorstelling.Naam</h3>
+                <p>@voorstelling.Datum</p>
+                <p>@voorstelling.Tijd</p>
+            </div>
+        </a>
+    }
 </div>

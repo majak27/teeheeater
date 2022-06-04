@@ -51,17 +51,14 @@ h3 {
     color: #0CAFA9;
 }
 
-.agenda_body {
+.agendaBody {
+    display: flex;
+    flex-wrap: wrap;
     width: 100vw;
     padding: 5px;
     background-color: #BED8CF;
     display: flex;
-    flex-direction: column;
     align-items: center;
-}
-
-.agendaBody{
-    display: flex;
 }
 
 .agendaBtn {

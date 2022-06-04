@@ -14,5 +14,9 @@ namespace teeheeater.Database
         public string Beschrijving { get; set; }
 
         public string Foto { get; set; }
+
+        public string Datum { get; set; }
+
+        public string Tijd { get; set;  }
     }
 }

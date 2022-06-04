@@ -54,7 +54,9 @@ namespace teeheeater.Controllers
         [Route("agenda")]
         public IActionResult Agenda()
         {
-            return View();
+            var products = GetAllVoorstellingen();
+
+            return View(products);
         }
 
         [HttpPost]
@@ -65,7 +67,7 @@ namespace teeheeater.Controllers
             if (ModelState.IsValid)
 
                 //persoon opslaan in de database
-                DatabaseConnector.SavePerson(person);
+                //DatabaseConnector.SavePerson(person);
 
                 return Redirect("/succes");
 
@@ -88,7 +90,7 @@ namespace teeheeater.Controllers
         public List<Voorstellingen> GetAllVoorstellingen()
         {
             // alle producten ophalen uit de database
-            var rows = DatabaseConnector.GetRows("select * from voorstellingen");
+            var rows = DatabaseConnector.GetRows("select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id");
 
             // lijst maken om alle producten in te stoppen
             List<Voorstellingen> voorstellingen = new List<Voorstellingen>();
@@ -100,6 +102,8 @@ namespace teeheeater.Controllers
                 p.Beschrijving = row["Beschrijving"].ToString();
                 p.Foto = row["Foto"].ToString();
                 p.Id = Convert.ToInt32(row["id"]);
+                p.Datum = row["datum"].ToString();
+                p.Tijd = row["tijd"].ToString();
 
                 // en dat product voegen we toe aan de lijst met producten
                 voorstellingen.Add(p);
@@ -111,7 +115,7 @@ namespace teeheeater.Controllers
         public Voorstellingen GetVoorstelling(int id)
         {
             // alle producten ophalen uit de database
-            var rows = DatabaseConnector.GetRows($"select * from voorstellingen where id = {id}");
+            var rows = DatabaseConnector.GetRows($"select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id WHERE id = {id}");
 
             // lijst maken om alle producten in te stoppen
             List<Voorstellingen> products = new List<Voorstellingen>();
@@ -124,6 +128,8 @@ namespace teeheeater.Controllers
                 p.Beschrijving = row["Beschrijving"].ToString();
                 p.Foto = row["Foto"].ToString();
                 p.Id = Convert.ToInt32(row["id"]);
+                p.Datum = row["datum"].ToString();
+                p.Tijd = row["tijd"].ToString();
 
                 // en dat product voegen we toe aan de lijst met producten
                 products.Add(p);

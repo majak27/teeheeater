@@ -2,8 +2,7 @@
 
 namespace teeheeater.Models
 {
-   public class Person
-    
+   public class Person 
     {
         [Required(ErrorMessage = "Gelieve uw voornaam in te vullen")]
         [Display(Name = "Voornaam")]
