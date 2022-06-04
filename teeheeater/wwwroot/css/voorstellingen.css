@@ -2,23 +2,25 @@
     box-sizing: border-box;
 }
 
-h1 {
+h3 {
     font-family: Josefin Sans;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ED6F00;
+    color: #963F2D;
+    font-size: 50px;
+    margin: 0;
 }
 
-h2 {
+p {
     display: flex;
     justify-content: center;
     font-family: Open Sans;
-    font-size: 25px;
+    font-size: 15px;
     margin: 0;
     line-height: 35px;
-    color: #ED6F00;
+    color: #963F2D;
 }
 
 .breadcrumbs {
@@ -53,7 +55,7 @@ h2 {
     justify-content: flex-end;
 }
 
-img {
+.voorstelling_img {
     height: 100%;
     width: 50%;
 }
@@ -74,6 +76,9 @@ img {
 
 .voorstellingenBody {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #FCCE8E;
 }
 
 .voorstellingenBtn {

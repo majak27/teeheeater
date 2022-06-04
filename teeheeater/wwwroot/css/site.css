@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.image_nieuws {
+    position: absolute;
+    width: 100vw;
+}
 
 body {
     font-size: 1rem;
@@ -217,10 +221,6 @@ body {
     align-items: flex-end;
 }
 
-.image_nieuws {
-    position: absolute;
-}
-
 h1 {
     font-family: Josefin Sans;
     font-style: normal;
@@ -323,14 +323,15 @@ h2 {
 footer {
     font-family: Open Sans;
     width: 100vw;
-    height: 200px;
+    height: 300px;
+    padding: 80px;
     left: 0px;
     top: 992px;
     background: #ED6F00;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
     color: white;
 }
 

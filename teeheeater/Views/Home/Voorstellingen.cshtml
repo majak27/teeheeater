@@ -13,7 +13,7 @@
 @foreach(Voorstellingen voorstelling in Model)
 {
     <a class="voorstellingenBtn" href="voorstellingen/@voorstelling.Id">
-        <img src="@voorstelling.Foto">
+        <img src="@voorstelling.Foto" class="voorstelling_img">
         <div class="btnText">
             <h3>@voorstelling.Naam</h3>
             <p>@voorstelling.Beschrijving</p>                   
