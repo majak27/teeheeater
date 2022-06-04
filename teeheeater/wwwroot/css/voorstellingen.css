@@ -2,6 +2,22 @@
     box-sizing: border-box;
 }
 
+h1 {
+    display: flex;
+    justify-content: center;
+    color: #ED6F00;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-family: Open Sans;
+    font-size: 25px;
+    margin: 0;
+    line-height: 35px;
+    color: #0CAFA9;
+}
+
 h3 {
     font-family: Josefin Sans;
     font-weight: bold;
