@@ -10,54 +10,16 @@
 }
 
  <div class="voorstellingenBody">
-@foreach(Voorstellingen p in Model)
+@foreach(Voorstellingen voorstelling in Model)
 {
-    <a class="voorstellingenBtn" href="voorstellingen/{@p.Id}">
+    <a class="voorstellingenBtn" href="voorstellingen/{@voorstelling.Id}">
         <img src="~/img/welcome_to_my_life.png">
             <div class="btnText">
-            <h3>@p.Naam</h3>
-            <p>@p.Beschrijving</p>                   
+            <h3>@voorstelling.Naam</h3>
+            <p>@voorstelling.Beschrijving</p>                   
         </div>
     </a>
 }
 </div>
 
-    <div class="voorstellingenBody">
-        <div class="row">
-            <a class="voorstellingenBtn" href="Welcome to my life">
-                <img src="~/img/welcome_to_my_life.png">
-                <div class="btnText">
-                    <h3>Welcome to my life</h3>
-                    <p>Een theatervoorstelling over het levensverhaal van Mevrouw Blom. Mevrouw Blom is ernstig ziek, wordt zij ooit nog beter?</p>
-                    
-                </div>
-            </a>
-            <a class="voorstellingenBtn" href="De uren die vliegen">
-                <img src="~/img/uren_die_vliegen.png">
-                <div class="btnText">
-                    <h3>De uren die vliegen</h3>
-                    <p>Meeslepend verhaal over Len den Zeelander en Bart den Yper die hun laatste uren samen met elkaar doorbrengen.</p>
-                    
-                </div>
-            </a>
-        </div>
-        <div class="row">
-            <a class="voorstellingenBtn" href="Welcome to my life">
-                <img src="~/img/romeo_en_julia.png">
-                <div class="btnText">
-                    <h3>Romeo en Julia</h3>
-                    <p>Een tragedie die je helemaal meeneemt in het moderne liefdesverhaal van Romeo en Julia. </p>
-                    
-                </div>
-            </a>
-            <a class="voorstellingenBtn" href="De uren die vliegen">
-                <img src="~/img/love_hate_djenz.png">
-                <div class="btnText">
-                    <h3>Love, Hate and Djenz</h3>
-                    <p>Vol muziek en dans. Kom en beleef het leven van de tapdancer Oliver Goens! </p>
-                    
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
+    

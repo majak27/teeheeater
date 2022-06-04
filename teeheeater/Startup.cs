@@ -27,7 +27,7 @@ namespace teeheeater
             services.AddSession(options =>
 
             {
-                options.Cookie.Name = // ".AdventureWorks.Session" (i just don't know of dit een random naam is of dat dit altijd zo is)
+                //options.Cookie.Name = // ".AdventureWorks.Session" (i just don't know of dit een random naam is of dat dit altijd zo is)
                 options.IdleTimeout = TimeSpan.FromDays(7);
                 options.Cookie.IsEssential = true;
             });

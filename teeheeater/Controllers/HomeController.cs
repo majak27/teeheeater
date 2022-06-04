@@ -24,7 +24,7 @@ namespace teeheeater.Controllers
         }
         public IActionResult Index()
         {
-            ViewData["user"] = HttpContext.Session.GetString("User");
+            //ViewData["user"] = HttpContext.Session.GetString("User");
             return View();
         }
 
@@ -37,7 +37,10 @@ namespace teeheeater.Controllers
         [Route("voorstellingen")]
         public IActionResult Voorstellingen()
         {
-            return View();
+                var products = GetAllVoorstellingen();
+
+                // de lijst met producten in de html stoppen
+                return View(products);
         }
 
         [Route("voorstellingen/{id}")]
@@ -78,6 +81,28 @@ namespace teeheeater.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        public List<Voorstellingen> GetAllVoorstellingen()
+        {
+            // alle producten ophalen uit de database
+            var rows = DatabaseConnector.GetRows("select * from voorstellingen");
+
+            // lijst maken om alle producten in te stoppen
+            List<Voorstellingen> voorstellingen = new List<Voorstellingen>();
+
+            foreach (var row in rows)
+            {
+                Voorstellingen p = new Voorstellingen();
+                p.Naam = row["Naam"].ToString();
+                p.Beschrijving = row["Beschrijving"].ToString();
+                p.Id = Convert.ToInt32(row["id"]);
+
+                // en dat product voegen we toe aan de lijst met producten
+                voorstellingen.Add(p);
+            }
+
+            return voorstellingen;
+        }
+
         public Voorstellingen GetVoorstelling(int id)
         {
             // alle producten ophalen uit de database
@@ -101,14 +126,15 @@ namespace teeheeater.Controllers
             return products[0];
         }
 
-    }
-    public IActionResult Login(string username, string password)
-    {
-        if (password == "geheim")
-        {
-            HttpContext.Session.SetString("User", username);
-            return redirect("/");
-        }
-        return View();
+        //public IActionResult Login(string username, string password)
+        //{
+        //    if (password == "geheim")
+        //    {
+        //        HttpContext.Session.SetString("User", username);
+        //        return redirect("/");
+        //    }
+        //    return View();
+        //}
+
     }
 }
