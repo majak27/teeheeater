@@ -1,0 +1,21 @@
+﻿@using teeheeater.Database
+@model Voorstellingen
+@{
+    ViewData["Title"] = Model.Naam;
+    ViewData["prevTitle"] = "voorstellingen";
+}
+
+@section script{
+    <link href="~/css/voorstellingen.css" rel="stylesheet">
+}
+
+<div class="voorstellingen_body">
+    <div class="foto">
+        <img src="@Model.Foto" class="foto">
+    </div>
+    <div class="beschrijving">
+        <h3>@Model.Naam</h3>
+        <p>@Model.Beschrijving</p>
+    </div>
+    <a class="agenda_btn3" href="/voorstellingen/@Model.Id/data">meer data ></a>
+</div>
