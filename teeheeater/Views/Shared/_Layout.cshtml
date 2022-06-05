@@ -33,11 +33,15 @@
             </div>
     </header>
     <div>
+@*registreert niet echt op welke pagina je net nog was*@
         <div class="container">
             <h1>@ViewData["Title"]</h1>
             <ul class="breadcrumbs">
                 <li class="breadcrumbs__item">
                     <a href="/" class="breadcrumbs__link">home</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="/@ViewData["prevprevTitle"]" class="breadcrumbs__link">@ViewData["prevprevTitle"]</a>
                 </li>
                 <li class="breadcrumbs__item">
                     <a href="/@ViewData["prevTitle"]" class="breadcrumbs__link">@ViewData["prevTitle"]</a>

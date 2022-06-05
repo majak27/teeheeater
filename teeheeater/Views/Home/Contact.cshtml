@@ -8,52 +8,56 @@
 }
 
 <div class="contact_body">
-    <h2> Meld je aan voor onze nieuwsbrief! </h2>
-    <form method="post" class="contactForm">
+    <div>
+        <h2> Meld je aan voor onze nieuwsbrief! </h2>
+        <form method="post" class="contactForm">
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.FirstName)
-            @Html.TextBoxFor(m => m.FirstName)
-            @Html.ValidationMessageFor(m => m.FirstName)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.FirstName)
+                @Html.TextBoxFor(m => m.FirstName)
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.LastName)
-            @Html.TextBoxFor(m => m.LastName)
-            @Html.ValidationMessageFor(m => m.LastName)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.LastName)
+                @Html.TextBoxFor(m => m.LastName)
+                @Html.ValidationMessageFor(m => m.LastName)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Email)
-            @Html.TextBoxFor(m => m.Email)
-            @Html.ValidationMessageFor(m => m.Email)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Phone)
-            @Html.TextBoxFor(m => m.Phone)
-            @Html.ValidationMessageFor(m => m.Phone)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Phone)
+                @Html.TextBoxFor(m => m.Phone)
+                @Html.ValidationMessageFor(m => m.Phone)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Address)
-            @Html.TextBoxFor(m => m.Address)
-            @Html.ValidationMessageFor(m => m.Address)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Address)
+                @Html.TextBoxFor(m => m.Address)
+                @Html.ValidationMessageFor(m => m.Address)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Description)
-            @Html.TextBoxFor(m => m.Description)
-            @Html.ValidationMessageFor(m => m.Description)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Description)
+                @Html.TextBoxFor(m => m.Description)
+                @Html.ValidationMessageFor(m => m.Description)
+            </div>
 
-        <input type="submit" value="verstuur" />
-    </form>
+            <input type="submit" value="verstuur" />
+        </form>
 
-    @if (Model != null)
-    {
-        <p>Hallo @Model.FirstName   @Model.LastName  </p>
-    }
+        @if (Model != null)
+        {
+            <p>Hallo @Model.FirstName   @Model.LastName  </p>
+        }
+    </div>
+    <div class="google maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d306.59039465835434!2d4.365862925192906!3d52.06656436165387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b7c0fe833883%3A0xc5631306575100ec!2sKerkbrug!5e0!3m2!1snl!2snl!4v1653046765863!5m2!1snl!2snl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 </div>
-
 

@@ -24,7 +24,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #963F2D;
+    color: white;
     font-size: 50px;
     margin: 0;
 }
@@ -36,7 +36,7 @@ p {
     font-size: 15px;
     margin: 0;
     line-height: 35px;
-    color: #963F2D;
+    color: white;
 }
 
 .breadcrumbs {
@@ -94,13 +94,26 @@ p {
     height: 335px;
     width: 45vw;
     margin: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: #f79239;
     color: white;
     font-family: josefin sans;
     text-decoration: none;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
     .voorstellingenBtn:hover {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: #ed8528;
     }
+
+/*detailpagina*/
+
+.voorstellingen_body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #FCCE8E;
+}
+
+.foto {
+    width: 50vw;
+}

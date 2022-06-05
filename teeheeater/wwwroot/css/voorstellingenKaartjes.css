@@ -5,7 +5,7 @@
 h1 {
     display: flex;
     justify-content: center;
-    color: #ED6F00;
+    color: #0CAFA9;
 }
 
 h2 {
@@ -57,13 +57,13 @@ p {
 
 .breadcrumbs__link {
     text-decoration: none;
-    color: #FCCE8E;
+    color: #BED8CF;
 }
 
 .breadcrumbs__link--active {
     text-decoration: none;
     font-weight: bold;
-    color: #ED6F00;
+    color: #0CAFA9;
 }
 
 .search2 {
@@ -108,12 +108,34 @@ p {
 /*detailpagina*/
 
 .voorstellingen_body {
+    background-color: #BED8CF;
+    padding: 30px;
+}
+
+.voorstellingen__body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #FCCE8E;
+    background-color: rgba(12, 176, 171, 0.2);
 }
 
+.beschrijving {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 .foto {
     width: 50vw;
+}
+
+.plekken {
+    width: 30px;
+    height: 30px;
+    background: #0CAFA9;
+    border-radius: 5px;
+}
+
+.grid {
+    display: grid;
 }

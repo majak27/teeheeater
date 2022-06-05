@@ -9,6 +9,13 @@
     <link href="~/css/voorstellingen.css" rel="stylesheet">
 }
 
-<div class = "text-center">
-    <p>@Model.Beschrijving</p>
+<div class="voorstellingen_body">
+    <div class="foto">
+        <img src="@Model.Foto" class="foto">
+    </div>
+    <div class="beschrijving">
+        <h3>@Model.Naam</h3>
+        <p>@Model.Beschrijving</p>
+    </div>
+    <a class="agenda_btn3" href="/voorstellingen/@Model.Id/kaartjes">meer data ></a>
 </div>

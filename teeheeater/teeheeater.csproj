@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\img\welcome_to_my_life.png" />
+    <Content Remove="wwwroot\img\6332219_preview.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -22,6 +22,8 @@ h2 {
 .contact_body {
     background-color: #963F2D;
     padding: 50px;
+    display: flex;
+    flex-direction: row;
 }
 
 input[type=text]{
