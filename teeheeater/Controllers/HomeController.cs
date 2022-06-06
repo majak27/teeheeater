@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using MySql.Data;
+//using MySql.Data;
 using teeheeater.Database;
 using teeheeater.Models;
 
@@ -24,7 +25,7 @@ namespace teeheeater.Controllers
         }
         public IActionResult Index()
         {
-            //ViewData["user"] = HttpContext.Session.GetString("User");
+            ViewData["user"] = HttpContext.Session.GetString("User");
             return View();
         }
 
@@ -152,15 +153,19 @@ namespace teeheeater.Controllers
             return products[0];
         }
 
-        //public IActionResult Login(string username, string password)
-        //{
-        //    if (password == "geheim")
-        //    {
-        //        HttpContext.Session.SetString("User", username);
-        //        return redirect("/");
-        //    }
-        //    return View();
-        //}
+        public IActionResult Login(string username, string password)
+        {
+            if (password == "geheim")
+            {
+                HttpContext.Session.SetString("User", username);
+                return redirect("/");
+            }
+            return View();
+        }
 
+        private IActionResult redirect(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

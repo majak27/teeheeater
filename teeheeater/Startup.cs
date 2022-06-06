@@ -24,16 +24,16 @@ namespace teeheeater
         {
 
 
-            //services.AddSession(options =>
+            services.AddSession(options =>
 
-            //{
-            //    //options.Cookie.Name = // ".AdventureWorks.Session" (i just don't know of dit een random naam is of dat dit altijd zo is)
-            //    options.IdleTimeout = TimeSpan.FromDays(7);
-            //    options.Cookie.IsEssential = true;
-            //});
+            {
+                options.Cookie.Name = ".AdventureWorks.Session";
+                options.IdleTimeout = TimeSpan.FromDays(7);
+                options.Cookie.IsEssential = true;
+            });
 
             services.AddControllersWithViews();
-            //services.AddRazorPages();
+            services.AddRazorPages();
         }
 
 
