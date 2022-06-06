@@ -23,6 +23,7 @@ namespace teeheeater.Controllers
         {
             _logger = logger;
         }
+
         public IActionResult Index()
         {
             ViewData["user"] = HttpContext.Session.GetString("User");
