@@ -13,15 +13,15 @@
         <form method="post" class="contactForm">
 
             <div class="form-group">
-                @Html.LabelFor(m => m.FirstName)
-                @Html.TextBoxFor(m => m.FirstName)
-                @Html.ValidationMessageFor(m => m.FirstName)
+                @Html.LabelFor(m => m.Voornaam)
+                @Html.TextBoxFor(m => m.Voornaam)
+                @Html.ValidationMessageFor(m => m.Voornaam)
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(m => m.LastName)
-                @Html.TextBoxFor(m => m.LastName)
-                @Html.ValidationMessageFor(m => m.LastName)
+                @Html.LabelFor(m => m.Achternaam)
+                @Html.TextBoxFor(m => m.Achternaam)
+                @Html.ValidationMessageFor(m => m.Achternaam)
             </div>
 
             <div class="form-group">
@@ -31,21 +31,21 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(m => m.Phone)
-                @Html.TextBoxFor(m => m.Phone)
-                @Html.ValidationMessageFor(m => m.Phone)
+                @Html.LabelFor(m => m.Telefoon)
+                @Html.TextBoxFor(m => m.Telefoon)
+                @Html.ValidationMessageFor(m => m.Telefoon)
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(m => m.Address)
-                @Html.TextBoxFor(m => m.Address)
-                @Html.ValidationMessageFor(m => m.Address)
+                @Html.LabelFor(m => m.Adres)
+                @Html.TextBoxFor(m => m.Adres)
+                @Html.ValidationMessageFor(m => m.Adres)
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(m => m.Description)
-                @Html.TextBoxFor(m => m.Description)
-                @Html.ValidationMessageFor(m => m.Description)
+                @Html.LabelFor(m => m.Bericht)
+                @Html.TextBoxFor(m => m.Bericht)
+                @Html.ValidationMessageFor(m => m.Bericht)
             </div>
 
             <input type="submit" value="verstuur" />
@@ -53,7 +53,7 @@
 
         @if (Model != null)
         {
-            <p>Hallo @Model.FirstName   @Model.LastName  </p>
+            <p>Hallo @Model.Voornaam   @Model.Achternaam  </p>
         }
     </div>
     <div class="google maps">
