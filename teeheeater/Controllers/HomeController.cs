@@ -69,7 +69,13 @@ namespace teeheeater.Controllers
             return View(products);
         }
 
-        //[HttpPost]
+        [Route("contact")]
+        public IActionResult Contact()
+        {            
+            return View();
+        }
+
+        [HttpPost]
         [Route("contact")]
         public IActionResult Contact(Person person)
         {

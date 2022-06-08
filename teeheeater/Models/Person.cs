@@ -28,5 +28,6 @@ namespace teeheeater.Models
         [Required(ErrorMessage = "Bericht is verplicht")]
         [Display(Name = "Bericht")]
         public string Bericht { get; set; }
+      
     }
 }
