@@ -6,11 +6,10 @@
 }
 
 @section script {
-    <link href="~/css/site.css" rel="stylesheet">
+    <link href="~/css/site-light.css" rel="stylesheet" id="theme-link">
 }
 
-<h1 class="display-4"> Welcome, @ViewData["user"]</h1>
-
+<button class="btn-toggle">Toggle Dark-Mode</button>
 <div class="slider">
     <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav" />
     <input type="radio" name="slider" title="slide2" class="slider__nav" />
@@ -73,3 +72,19 @@
     </div>
     <a class="agenda_btn3" href="/agenda">meer data ></a>
 </div>
+
+
+ <script>
+    const btn = document.querySelector(".btn-toggle");
+    const theme = document.querySelector("#theme-link");
+    btn.addEventListener("click", function() 
+    {
+        // Swap out the URL for the different stylesheets
+        if (theme.getAttribute("href") == "/css/site-dark.css") {
+          theme.href = "/css/site-light.css";
+        } 
+        else {
+          theme.href = "/css/site-dark.css";
+        }
+      };
+ </script>
