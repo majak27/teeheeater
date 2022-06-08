@@ -22,20 +22,9 @@ namespace teeheeater
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-
-            services.AddSession(options =>
-
-            {
-                options.Cookie.Name = ".AdventureWorks.Session";
-                options.IdleTimeout = TimeSpan.FromDays(7);
-                options.Cookie.IsEssential = true;
-            });
-
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
-
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,7 +56,6 @@ namespace teeheeater
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-//using MySql.Data;
+using MySql.Data;
 using teeheeater.Database;
 using teeheeater.Models;
 
@@ -15,7 +15,7 @@ namespace teeheeater.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-       // private int lastName;
+        // private int lastName;
 
         public object ViewDate { get; private set; }
 
@@ -39,10 +39,10 @@ namespace teeheeater.Controllers
         [Route("voorstellingen")]
         public IActionResult Voorstellingen()
         {
-                var products = GetAllVoorstellingen();
+            var products = GetAllVoorstellingen();
 
-                // de lijst met producten in de html stoppen
-                return View(products);
+            // de lijst met producten in de html stoppen
+            return View(products);
         }
 
         [Route("voorstellingen/{id}")]
@@ -71,7 +71,7 @@ namespace teeheeater.Controllers
 
         [Route("contact")]
         public IActionResult Contact()
-        {            
+        {
             return View();
         }
 
@@ -159,21 +159,6 @@ namespace teeheeater.Controllers
             }
 
             return products[0];
-        }
-
-        public IActionResult Login(string username, string password)
-        {
-            if (password == "geheim")
-            {
-                HttpContext.Session.SetString("User", username);
-                return redirect("/");
-            }
-            return View();
-        }
-
-        private IActionResult redirect(string v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

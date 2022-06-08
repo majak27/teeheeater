@@ -48,6 +48,12 @@
                 @Html.ValidationMessageFor(m => m.Bericht)
             </div>
 
+            <div class="form-group"> 
+                @Html.LabelFor(m => m.Wachtwoord)
+                @Html.TextBoxFor(m => m.Wachtwoord)
+                @Html.ValidationMessageFor(m => m.Wachtwoord)
+            </div>
+
             <input type="submit" value="verstuur" />
         </form>
 

@@ -2,7 +2,7 @@
 
 namespace teeheeater.Models
 {
-    public class Person
+    public class PersonBase1
     {
         public int Id { get; set; }
 
@@ -33,8 +33,5 @@ namespace teeheeater.Models
         [Required(ErrorMessage = "Bericht is verplicht")]
 
         public string Bericht { get; set; }
-        [Display(Name = "Bericht")]
-
     }
-
 }
