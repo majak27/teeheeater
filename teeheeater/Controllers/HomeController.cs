@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using MySql.Data;
 using teeheeater.Database;
 using teeheeater.Models;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace teeheeater.Controllers
 {
@@ -45,12 +47,22 @@ namespace teeheeater.Controllers
             return View(products);
         }
 
+        private object GetAllVoorstellingen()
+        {
+            throw new NotImplementedException();
+        }
+
         [Route("voorstellingen/{id}")]
         public IActionResult VoorstellingenDetails(int id)
         {
             var voorstelling = GetVoorstelling(id);
 
             return View(voorstelling);
+        }
+
+        private object GetVoorstelling(int id)
+        {
+            throw new NotImplementedException();
         }
 
         [Route("voorstellingen/{id}/kaartjes")]
@@ -82,7 +94,7 @@ namespace teeheeater.Controllers
             // hebben we alles goed ingevuld? dan sturen we de gebruiker door naar de succes pagina
             if (ModelState.IsValid)
             {
-                //    //persoon opslaan in de database
+                //persoon opslaan in de database
                 DatabaseConnector.SavePerson(person);
 
                 return Redirect("/succes");
@@ -110,55 +122,107 @@ namespace teeheeater.Controllers
         //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         //}
 
-        public List<Voorstellingen> GetAllVoorstellingen()
+        static string ComputeSha256Hash(string rawData)
         {
-            // alle producten ophalen uit de database
-            var rows = DatabaseConnector.GetRows("select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id");
-
-            // lijst maken om alle producten in te stoppen
-            List<Voorstellingen> voorstellingen = new List<Voorstellingen>();
-
-            foreach (var row in rows)
+            // Create a SHA256   
+            using (SHA256 sha256Hash = SHA256.Create())
             {
-                Voorstellingen p = new Voorstellingen();
-                p.Naam = row["Naam"].ToString();
-                p.Beschrijving = row["Beschrijving"].ToString();
-                p.Foto = row["Foto"].ToString();
-                p.Id = Convert.ToInt32(row["id"]);
-                p.Datum = row["datum"].ToString();
-                p.Tijd = row["tijd"].ToString();
+                // ComputeHash - returns byte array  
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
-                // en dat product voegen we toe aan de lijst met producten
-                voorstellingen.Add(p);
+                // Convert byte array to a string   
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
             }
-
-            return voorstellingen;
         }
 
-        public Voorstellingen GetVoorstelling(int id)
+
+        [Route("Login")]
+        public IActionResult Login()
         {
-            // alle producten ophalen uit de database
-            var rows = DatabaseConnector.GetRows($"select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id WHERE voorstellingen.id = {id}");
+            return View();
+        }
 
-            // lijst maken om alle producten in te stoppen
-            List<Voorstellingen> products = new List<Voorstellingen>();
-
-            foreach (var row in rows)
+        [Route("Login")]
+        public IActionResult Login(string username, string wachtwoord)
+        {
+            if (wachtwoord == "geheim")
             {
-                // Voor elke rij maken we nu een product
-                Voorstellingen p = new Voorstellingen();
-                p.Naam = row["Naam"].ToString();
-                p.Beschrijving = row["Beschrijving"].ToString();
-                p.Foto = row["Foto"].ToString();
-                p.Id = Convert.ToInt32(row["id"]);
-                p.Datum = row["datum"].ToString();
-                p.Tijd = row["tijd"].ToString();
+                HttpContext.Session.SetString("User", username);
+                return Redirect("/");
+                // hash voor "wachtwoord"
+                string hash = "dc00c903852bb19eb250aeba05e534a6d211629d77d055033806b783bae09937";
 
-                // en dat product voegen we toe aan de lijst met producten
-                products.Add(p);
+                // is er een wachtwoord ingevoerd?
+                if (!string.IsNullOrWhiteSpace(wachtwoord))
+                {
+
+                    //Er is iets ingevoerd, nu kunnen we het wachtwoord hashen en vergelijken met de hash "uit de database"
+                    string hashVanIngevoerdWachtwoord = ComputeSha256Hash(wachtwoord);
+                    if (hashVanIngevoerdWachtwoord == hash)
+                    {
+                        HttpContext.Session.SetString("User", username);
+                        return Redirect("/");
+                    }
+                }
+
+                return View();
+
+                public List<Voorstellingen> GetAllVoorstellingen()
+                {
+                    // alle producten ophalen uit de database
+                    var rows = DatabaseConnector.GetRows("select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id");
+
+                    // lijst maken om alle producten in te stoppen
+                    List<Voorstellingen> voorstellingen = new List<Voorstellingen>();
+
+                    foreach (var row in rows)
+                    {
+                        Voorstellingen p = new Voorstellingen();
+                        p.Naam = row["Naam"].ToString();
+                        p.Beschrijving = row["Beschrijving"].ToString();
+                        p.Foto = row["Foto"].ToString();
+                        p.Id = Convert.ToInt32(row["id"]);
+                        p.Datum = row["datum"].ToString();
+                        p.Tijd = row["tijd"].ToString();
+
+                        // en dat product voegen we toe aan de lijst met producten
+                        voorstellingen.Add(p);
+                    }
+
+                    return voorstellingen;
+                }
+
+                public Voorstellingen GetVoorstelling(int id)
+                {
+                    // alle producten ophalen uit de database
+                    var rows = DatabaseConnector.GetRows($"select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id WHERE voorstellingen.id = {id}");
+
+                    // lijst maken om alle producten in te stoppen
+                    List<Voorstellingen> products = new List<Voorstellingen>();
+
+                    foreach (var row in rows)
+                    {
+                        // Voor elke rij maken we nu een product
+                        Voorstellingen p = new Voorstellingen();
+                        p.Naam = row["Naam"].ToString();
+                        p.Beschrijving = row["Beschrijving"].ToString();
+                        p.Foto = row["Foto"].ToString();
+                        p.Id = Convert.ToInt32(row["id"]);
+                        p.Datum = row["datum"].ToString();
+                        p.Tijd = row["tijd"].ToString();
+
+                        // en dat product voegen we toe aan de lijst met producten
+                        products.Add(p);
+                    }
+
+                    return products[0];
+                }
             }
-
-            return products[0];
         }
     }
 }

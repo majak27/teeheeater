@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using teeheeater.Models;
 
@@ -55,10 +56,13 @@ namespace teeheeater.Database
             string connectionString = "Server=172.16.160.21;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
             //string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
 
+            // voordat we alles opslaan in de database gaan we eerst  het wachtwoord hashen
+            person.Wachtwoord = ComputeSha256Hash(person.Wachtwoord);
+
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO teeheeklant(voornaam, achternaam, email, bericht) VALUES(?voornaam, ?achternaam, ?email, ?bericht)", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO teeheeklant(voornaam, achternaam, email, bericht, wachtwoord) VALUES(?voornaam, ?achternaam, ?email, ?bericht, ?wachtwoord)", conn);
 
                 // Elke parameter moet je handmatig toevoegen aan de query
                 cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = person.Voornaam;
@@ -67,8 +71,14 @@ namespace teeheeater.Database
                 cmd.Parameters.Add("?telefoon", MySqlDbType.Text).Value = person.Telefoon;
                 cmd.Parameters.Add("?adres", MySqlDbType.Text).Value = person.Adres;
                 cmd.Parameters.Add("?bericht", MySqlDbType.Text).Value = person.Bericht;
+                cmd.Parameters.Add("?wachtwoord", MySqlDbType.Text).Value = person.Wachtwoord;
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        private static string ComputeSha256Hash(string wachtwoord)
+        {
+            throw new NotImplementedException();
         }
     }
 }

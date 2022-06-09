@@ -35,6 +35,8 @@ namespace teeheeater.Models
         public string Bericht { get; set; }
         [Display(Name = "Bericht")]
 
+
     }
+
 
 }
