@@ -19,21 +19,18 @@ namespace teeheeater.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        public string Wachtwoord { get; set; }
         [Display(Name = "Wachtwoord")]
+        public string Wachtwoord { get; set; }
 
-
-        public string Telefoon { get; set; }
         [Display(Name = "Telefoon")]
+        public string Telefoon { get; set; }
 
-
-        public string Adres { get; set; }
         [Display(Name = "Adres")]
-
+        public string Adres { get; set; }
         [Required(ErrorMessage = "Bericht is verplicht")]
 
-        public string Bericht { get; set; }
         [Display(Name = "Bericht")]
+        public string Bericht { get; set; }
 
 
     }

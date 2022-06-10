@@ -28,7 +28,7 @@ namespace teeheeater.Controllers
 
         public IActionResult Index()
         {
-            ViewData["user"] = HttpContext.Session.GetString("User");
+            //ViewData["user"] = HttpContext.Session.GetString("User");
             return View();
         }
 
@@ -46,11 +46,7 @@ namespace teeheeater.Controllers
             // de lijst met producten in de html stoppen
             return View(products);
         }
-
-        private object GetAllVoorstellingen()
-        {
-            throw new NotImplementedException();
-        }
+     
 
         [Route("voorstellingen/{id}")]
         public IActionResult VoorstellingenDetails(int id)
@@ -60,10 +56,6 @@ namespace teeheeater.Controllers
             return View(voorstelling);
         }
 
-        private object GetVoorstelling(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         [Route("voorstellingen/{id}/kaartjes")]
         public IActionResult VoorstellingenKaartjes(int id)
@@ -150,10 +142,11 @@ namespace teeheeater.Controllers
         [Route("Login")]
         public IActionResult Login(string username, string wachtwoord)
         {
+
             if (wachtwoord == "geheim")
             {
                 HttpContext.Session.SetString("User", username);
-                return Redirect("/");
+                //return Redirect("/");
                 // hash voor "wachtwoord"
                 string hash = "dc00c903852bb19eb250aeba05e534a6d211629d77d055033806b783bae09937";
 
@@ -172,32 +165,37 @@ namespace teeheeater.Controllers
 
                 return View();
 
-                public List<Voorstellingen> GetAllVoorstellingen()
-                {
-                    // alle producten ophalen uit de database
-                    var rows = DatabaseConnector.GetRows("select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id");
+            }
 
-                    // lijst maken om alle producten in te stoppen
-                    List<Voorstellingen> voorstellingen = new List<Voorstellingen>();
+            return View();
+        }
 
-                    foreach (var row in rows)
-                    {
-                        Voorstellingen p = new Voorstellingen();
-                        p.Naam = row["Naam"].ToString();
-                        p.Beschrijving = row["Beschrijving"].ToString();
-                        p.Foto = row["Foto"].ToString();
-                        p.Id = Convert.ToInt32(row["id"]);
-                        p.Datum = row["datum"].ToString();
-                        p.Tijd = row["tijd"].ToString();
+        public List<Voorstellingen> GetAllVoorstellingen()
+        {
+            // alle producten ophalen uit de database
+            var rows = DatabaseConnector.GetRows("select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id");
 
-                        // en dat product voegen we toe aan de lijst met producten
-                        voorstellingen.Add(p);
-                    }
+            // lijst maken om alle producten in te stoppen
+            List<Voorstellingen> voorstellingen = new List<Voorstellingen>();
 
-                    return voorstellingen;
-                }
+            foreach (var row in rows)
+            {
+                Voorstellingen p = new Voorstellingen();
+                p.Naam = row["Naam"].ToString();
+                p.Beschrijving = row["Beschrijving"].ToString();
+                p.Foto = row["Foto"].ToString();
+                p.Id = Convert.ToInt32(row["id"]);
+                p.Datum = row["datum"].ToString();
+                p.Tijd = row["tijd"].ToString();
 
-                public Voorstellingen GetVoorstelling(int id)
+                // en dat product voegen we toe aan de lijst met producten
+                voorstellingen.Add(p);
+            }
+
+            return voorstellingen;
+        }
+
+        public Voorstellingen GetVoorstelling(int id)
                 {
                     // alle producten ophalen uit de database
                     var rows = DatabaseConnector.GetRows($"select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id WHERE voorstellingen.id = {id}");
@@ -222,7 +220,7 @@ namespace teeheeater.Controllers
 
                     return products[0];
                 }
-            }
-        }
+            
+        
     }
 }
