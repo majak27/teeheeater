@@ -11,8 +11,8 @@ namespace teeheeater.Database
         public static List<Dictionary<string, object>> GetRows(string query)
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=172.16.160.21;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
-            //string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
+            //string connectionString = "Server=172.16.160.21;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
+            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
@@ -53,11 +53,11 @@ namespace teeheeater.Database
 
         public static void SavePerson(Person person)
         {
-            string connectionString = "Server=172.16.160.21;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
-            //string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
+            //string connectionString = "Server=172.16.160.21;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
+            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110612;Uid=110612;Pwd=inf2122sql;";
 
             // voordat we alles opslaan in de database gaan we eerst  het wachtwoord hashen
-            person.Wachtwoord = ComputeSha256Hash(person.Wachtwoord);
+           // person.Wachtwoord = ComputeSha256Hash(person.Wachtwoord);
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -76,9 +76,5 @@ namespace teeheeater.Database
             }
         }
 
-        private static string ComputeSha256Hash(string wachtwoord)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
