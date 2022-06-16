@@ -2,7 +2,8 @@
 @using teeheeater.Database;
 
 @{
-    ViewData["Title"] = "home";
+    ViewData["Title"] = "";
+    ViewData["activeTab"] = "home";
 }
 
 @section script {
@@ -16,30 +17,38 @@
     <input type="radio" name="slider" title="slide4" class="slider__nav" />
     <div class="slider__inner">
         <div class="slider__contents">
-            <div class="slider__txt">
+            <a href="/nieuws">
+                <div class="slider__txt">
+                    <div class="nieuws_item">
+                        <img src="~/img/nijlpaard.jpg" class="image_nieuws">
+                        <h2>Nijlpaardenpenis</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <a href="/nieuws">
+            <div class="slider__contents">
                 <div class="nieuws_item">
-                    <img src="~/img/nijlpaard.jpg" class="image_nieuws">
-                    <h2>Nijlpaardenpenis</h2>
+                    <img src="~/img/theater.png" class="image_nieuws">
+                    <h2>Nieuwe voorstelling, ben jij erbij?</h2>
                 </div>
             </div>
+        </a>
+        <div class="slider__contents">
+            <a href="/nieuws">
+                <div class="nieuws_item">
+                    <img src="~/img/maria_magdalena.png" class="image_nieuws">
+                    <h2>Maria Magdalena superstar: laatste kans! </h2>
+                </div>
+            </a>
         </div>
         <div class="slider__contents">
-            <div class="nieuws_item">
-                <img src="~/img/theater.png" class="image_nieuws">
-                <h2>Nieuwe voorstelling, ben jij erbij?</h2>
-            </div>
-        </div>
-        <div class="slider__contents">
-            <div class="nieuws_item">
-                <img src="~/img/maria_magdalena.png" class="image_nieuws">
-                <h2>Maria Magdalena superstar: laatste kans! </h2>
-            </div>
-        </div>
-        <div class="slider__contents">
-            <div class="nieuws_item">
-                <img src="~/img/theater.png" class="image_nieuws">
-                <h2>Coronatoegansbewijs: wat zijn de regels? </h2>
-            </div>
+            <a href="/nieuws">
+                <div class="nieuws_item">
+                    <img src="~/img/theater.png" class="image_nieuws">
+                    <h2>Coronatoegansbewijs: wat zijn de regels? </h2>
+                </div>
+            </a>
         </div>
     </div>
 </div>
@@ -49,7 +58,6 @@
         <img src="~/img/welcome_to_my_life.png" class="cardImage">
         <div class="card-body">
             <h5 class="card-title">Welcome to my Life</h5>
-            <p class="card-text">Een theatervoorstelling over het levensverhaal van Meneer Blom. Meneer Blom is...</p>
             <a href="/voorstellingen/1" class="btn btn-primary">info & kaartjes ></a>
         </div>
     </div>
@@ -57,7 +65,6 @@
         <img src="~/img/uren_die_vliegen.png" class="cardImage">
         <div class="card-body">
             <h5 class="card-title">De Uren Die Vliegen</h5>
-            <p class="card-text">Meeslepend verhaal over Len den Zeelander en Bart...</p>
             <a href="/voorstellingen/2" class="btn btn-primary">info & kaartjes ></a>
         </div>
     </div>
@@ -65,7 +72,6 @@
         <img src="~/img/romeo_en_julia.png" class="cardImage">
         <div class="card-body">
             <h5 class="card-title">Welcome to my life</h5>
-            <p class="card-text">Een theatervoorstelling over het levensverhaal van Mevrouw Blom. Mevrouw Blom is...</p>
             <a href="/voorstellingen/3" class="btn btn-primary">info & kaartjes ></a>
         </div>
     </div>

@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+﻿2@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 * {
     box-sizing: border-box;
@@ -112,34 +112,24 @@ p {
 .voorstellingen_body {
     background-color: #BED8CF;
     padding: 30px;
+    width: 100vw;
 }
 
 .voorstellingen__body {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     background-color: rgba(12, 176, 171, 0.2);
 }
 
 .beschrijving {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
+    margin-left: 7%;
 }
+
 .foto {
     width: 50vw;
-}
-
-.plekken {
-    width: 30px;
-    height: 30px;
-    background: #0CAFA9;
-    border-radius: 5px;
-}
-
-.grid {
-    display: grid;
 }
 
 body {
@@ -167,25 +157,21 @@ body {
         appearance: none;
     }
 
-.container {
-    margin-bottom: 30px;
-}
 
 .seat {
-    background-color: #444451;
-    height: 12px;
-    width: 15px;
+    background-color: #0CAFA9;
+    height: 30px;
+    width: 30px;
     margin: 3px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 5px;
 }
 
     .seat.selected {
-        background-color: #6feaf6;
+        background-color: #ED6F00;
     }
 
     .seat.occupied {
-        background-color: #fff;
+        background-color: rgba(255,255,255,0.4);
     }
 
     .seat:nth-of-type(2) {
@@ -229,6 +215,7 @@ body {
 
 .row {
     display: flex;
+    justify-content: center;
 }
 
 .screen {
@@ -241,9 +228,9 @@ body {
 }
 
 p.text {
-    margin: 5px 0;
+    margin: 10px ;
 }
 
     p.text span {
-        color: #6feaf6;
+        color: #ED6F00;
     }

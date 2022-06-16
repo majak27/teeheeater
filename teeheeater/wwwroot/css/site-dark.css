@@ -5,6 +5,34 @@
     box-sizing: border-box;
 }
 
+/*TEXTKOPJES ==============*/
+h1 {
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    color: white;
+    display: flex;
+    align-content: flex-end;
+    position: relative;
+    margin: 50px;
+}
+
+/*HEADER=================*/
+
 header {
     display: flex;
     justify-content: space-between;
@@ -16,16 +44,100 @@ header {
     transition: .4s ease;
 }
 
-.image_nieuws {
-    position: absolute;
-    width: 100vw;
+.btn {
+    width: 118px;
+    height: 35px;
+    top: 6px;
+    background: #963F2D;
+    border-radius: 5px;
+    margin: 5px;
+    top: -40px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration-line: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #FEF5ED;
+    opacity: 0.9;
+    transition: 0.3s;
 }
 
-body {
-    font-size: 1rem;
-    line-height: 1.5;
+    .btn:hover {
+        background: #cf5215;
+        opacity: 0.8;
+    }
+
+.logo {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    height: 100px;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+
+
+input[type=text] {
+    width: 250px;
+    height: 39px;
+    left: 1133px;
+    top: 6px;
+    background: rgba(150, 63, 45, 0.4);
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.subheader {
+    height: 50px;
+}
+
+/*BREADCRUMBS ===========*/
+
+.breadcrumbs {
+    padding: 5px;
+    margin: 0px;
+    font-family: Open Sans;
+}
+
+.breadcrumbs__item {
+    display: inline-block;
+}
+
+    .breadcrumbs__item:not(:last-of-type)::after {
+        content: "/";
+        color: #963F2D;
+        opacity: 0.4;
+        X
+    }
+
+.breadcrumbs__link {
+    text-decoration: none;
+    color: #FCCE8E;
+}
+
+.breadcrumbs__link--active {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ED6F00;
+}
+
+/*INDEX BODY =============*/
+
+/*slider*/
+.nieuws_item {
+    width: 100vw;
+    background-size: cover;
+    align-items: flex-end;
 }
 
 .slider {
@@ -66,6 +178,7 @@ body {
     backface-visibility: hidden;
     transition: 0.3s;
 }
+
     .slider__nav:hover {
         outline: 6px solid #ED6F00;
         opacity: 0.6
@@ -122,91 +235,30 @@ body {
     display: flex;
 }
 
-.logo {
-    display: flex;
-    justify-content: flex-start;
-    height: 100px;
+.image_nieuws {
+    position: absolute;
+    width: 100vw;
 }
 
-.nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-}
-
-.breadcrumbs {
-    padding: 5px;
-    margin: 0px;
-    font-family: Open Sans;
-}
-
-.breadcrumbs__item {
+.contactForm label {
+    width: 200px;
     display: inline-block;
 }
 
-    .breadcrumbs__item:not(:last-of-type)::after {
-        content: "/";
-        color: #963F2D;
-        opacity: 0.4;
-    }
-
-.breadcrumbs__link {
-    text-decoration: none;
-    color: #FCCE8E;
+.carousel_item {
+    height: 100vh;
 }
 
-.breadcrumbs__link--active {
-    text-decoration: none;
-    font-weight: bold;
-    color: #ED6F00;
-}
-.btn {
-    width: 118px;
-    height: 35px;
-    top: 6px;
-    background: #963F2D;
-    border-radius: 5px;
-    margin: 5px;
-    top: -40px;
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    text-decoration-line: none;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: #FEF5ED;
-    opacity: 0.9;
-    transition: 0.3s;
-}
-
-    .btn:hover {
-        background: #cf5215;
-        opacity: 0.8;
-    }
-
-input[type=text] {
-    width: 250px;
-    height: 39px;
-    left: 1133px;
-    top: 6px;
-    background: rgba(150, 63, 45, 0.4);
-    border-radius: 5px;
-    margin: 5px;
-    border: none;
-    box-sizing: border-box;
-}
-
-.subheader {
-    height: 50px;
-}
-
+/*body*/
 body {
+    font-size: 1rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     background: #FEF5ED;
 }
+
 
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     width: 100%;
@@ -216,36 +268,7 @@ body {
     margin-left: 0;
 }
 
-.nieuws_item {
-    width: 100vw;
-    background-size: cover;
-    align-items: flex-end;
-}
-
-h1 {
-    font-family: Josefin Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 60px;
-    line-height: 60px;
-    display: flex;
-    align-items: center;
-}
-
-h2 {
-    font-family: Josefin Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 60px;
-    line-height: 60px;
-    display: flex;
-    align-items: center;
-    color: white;
-    display: flex;
-    align-content: flex-end;
-}
-
-/*homepagina mini agenda*/
+/* mini agenda*/
 .mini_agenda {
     height: 350px;
     background: #BED8CF;
@@ -260,7 +283,7 @@ h2 {
     background: #0CAFA9;
     border-radius: 2px;
     text-decoration: none;
-    transition: 0.3s;
+    transition: 0.2s;
     border-radius: 3px;
     margin: 5px;
     display: flex;
@@ -269,14 +292,15 @@ h2 {
     color: white;
 }
 
-     .agendaCard:hover {
-        opacity: 0.8;
-     }
+    .agendaCard:hover {
+        opacity: 0.9;
+    }
 
- .cardImage {
-     height: 100px;
-     border-radius: 3px;
- }
+.cardImage {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 3px;
+}
 
 .card-title {
     font-family: Josefin Sans;
@@ -286,14 +310,11 @@ h2 {
     padding: 10px;
 }
 
- .card-text{
-     padding: 10px;
-     margin: 0px;
- }
-
 .btn-primary {
     color: #fff;
     background-color: #ED6F00;
+    width: fit-content;
+    padding: 10px;
 }
 
 
@@ -301,7 +322,7 @@ h2 {
     width: 210px;
     height: 50px;
     margin: 20px;
-    background: black;
+    background: #0CAFA9;
     border-radius: 5px;
     font-family: Open Sans;
     font-style: normal;
@@ -312,40 +333,103 @@ h2 {
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: #FEF5ED;
     opacity: 0.9;
     transition: 0.3s;
 }
 
-.agenda_btn3:hover {
-    opacity: 0.8;
+    .agenda_btn3:hover {
+        opacity: 0.8;
+    }
+
+.logo2 {
+    display: flex;
+    justify-content: flex-end;
 }
 
+/*FOOTER -----------------------------*/
 footer {
     font-family: Open Sans;
     width: 100vw;
-    height: 300px;
     padding: 80px;
     left: 0px;
     top: 992px;
     background: black;
     display: flex;
+    text-align: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     color: white;
 }
 
-.logo2{
-    display:flex;
-    justify-content: flex-end;
+.social-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
 }
 
-.contactForm label {
-    width: 200px;
-    display: inline-block;
-}
+    .social-icons li {
+        display: inline-block;
+        margin-bottom: 4px
+    }
 
-.carousel_item{
-    height: 100vh;
+        .social-icons li.title {
+            margin-right: 15px;
+            text-transform: uppercase;
+            color: #96a2b2;
+            font-weight: 700;
+            font-size: 13px
+        }
+
+    .social-icons a {
+        background-color: #eceeef;
+        color: #818a91;
+        font-size: 16px;
+        display: inline-block;
+        line-height: 44px;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        margin-right: 8px;
+        border-radius: 100%;
+        -webkit-transition: all .2s linear;
+        -o-transition: all .2s linear;
+        transition: all .2s linear
+    }
+
+        .social-icons a:active, .social-icons a:focus, .social-icons a:hover {
+            color: #fff;
+            background-color: #29aafe
+        }
+
+    .social-icons.size-sm a {
+        line-height: 34px;
+        height: 34px;
+        width: 34px;
+        font-size: 14px
+    }
+
+    .social-icons a.facebook:hover {
+        background-color: #3b5998
+    }
+
+    .social-icons a.twitter:hover {
+        background-color: #00aced
+    }
+
+    .social-icons a.linkedin:hover {
+        background-color: #007bb6
+    }
+
+    .social-icons a.dribbble:hover {
+        background-color: #ea4c89
+    }
+
+@media (max-width:767px) {
+    .social-icons li.title {
+        display: block;
+        margin-right: 0;
+        font-weight: 600
+    }
 }
