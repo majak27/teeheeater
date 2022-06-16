@@ -4,55 +4,19 @@
 }
 
 @section script {
-    <link href="~/css/site-dark.css" rel="stylesheet" id="theme-link">
+    <link href="~/css/site-light.css" rel="stylesheet" id="theme-link">
     <script src="script.js"></script>
 }
 
-@*<button onclick="  ()">Switch</button>*@
-
-
-
-@*<script>function toggleTheme() {
-        // Obtains an array of all <link>
-        // elements.
-        // Select your element using indexing.
-
-        var theme = document.getElementsByTagName('link')[0];
-
-        // Change the value of href attribute
-        // to change the css sheet.
-
-        if (theme.getAttribute('href') == '/css/niews.css') {
-            theme.setAttribute('href', '/css/nieuws-dark.css');
-        } else {
-            theme.setAttribute('href', '/css/nieuws.css');
-        }
-    }</script>*@
-
-<script>let x = document.cookie;
-    const btn = document.querySelector(".btn-toggle");
-    const theme = document.querySelector("#theme-link");
-    btn.addEventListener("click", function () {
-        // Swap out the URL for the different stylesheets
-        //localStorage.getItem("theme");
-        if (theme.getAttribute("href") == "/css/site-dark.css") {
-            theme.href = "/css/site-light.css";
-            document.cookie = "theme-light";
-        } else {
-            theme.href = "/css/site-dark.css";
-        }
-        //localStorage.setItem("theme", theme.href);
-    });</script>
-
-<div class="slider">
-    <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav" />
-    <input type="radio" name="slider" title="slide2" class="slider__nav" />
-    <input type="radio" name="slider" title="slide3" class="slider__nav" />
-    <input type="radio" name="slider" title="slide4" class="slider__nav" />
-    <div class="slider__inner">
-        <div class="slider__contents">
+<div class="nieuwsslider">
+    <input type="radio" name="slider" title="slide1" checked="checked" class="nieuwsslider__nav" />
+    <input type="radio" name="slider" title="slide2" class="nieuwsslider__nav" />
+    <input type="radio" name="slider" title="slide3" class="nieuwsslider__nav" />
+    <input type="radio" name="slider" title="slide4" class="nieuwsslider__nav" />
+    <div class="nieuwsslider__inner">
+        <div class="nieuwsslider__contents">
             <div>
-                <img class="slider_img" src="/img/nijlpaard.jpg" onMouseOver="this.src='/img/smurf.jpeg'" onMouseOut="this.src='/img/nijlpaard.jpg'">
+                <img class="nieuwsslider_img" src="/img/nijlpaard.jpg" onMouseOver="this.src='/img/smurf.jpeg'" onMouseOut="this.src='/img/nijlpaard.jpg'">
             </div>
             <div class="nieuws_tekst">
                 <h2>Nijlpaardenpenis.</h2>
@@ -60,9 +24,9 @@
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" die>lees meer > </a>
             </div>
         </div>
-        <div class="slider__contents">
+        <div class="nieuwsslider__contents">
             <div>
-                <img class="slider_img" src="~/img/corona.png">
+                <img class="nieuwsslider_img" src="~/img/corona.png">
             </div>
             <div class="nieuws_tekst">
                 <h2>Coronatoegansbewijs: wat zijn de regels?</h2>
@@ -71,7 +35,7 @@
                 <p>Hopelijk kunnen we snel weer terug naar de oude situatie en mogen we weer volle zalen verwelkomen!</p>
             </div>
         </div>
-        <div class="slider__contents">
+        <div class="nieuwsslider__contents">
             <div class="img">
                 <img src="~/img/corona.png">
             </div>
@@ -80,7 +44,7 @@
                 <p>blablabla</p>
             </div>
         </div>
-        <div class="slider__contents">
+        <div class="nieuwsslider__contents">
             <div class="img">
                 <img src="~/img/corona.png">
             </div>
