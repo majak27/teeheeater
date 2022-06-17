@@ -68,7 +68,7 @@ namespace teeheeater.Controllers
         [Route("agenda")]
         public IActionResult Agenda()
         {
-            var products = GetAllVoorstellingen();
+            var products = GetAllAgendaVoorstellingen();
 
             return View(products);
         }
@@ -170,7 +170,7 @@ namespace teeheeater.Controllers
             return View();
         }
 
-        public List<Voorstellingen> GetAllVoorstellingen()
+        public List<Voorstellingen> GetAllAgendaVoorstellingen()
         {
             // alle producten ophalen uit de database
             var rows = DatabaseConnector.GetRows("select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id");
@@ -195,7 +195,7 @@ namespace teeheeater.Controllers
             return voorstellingen;
         }
 
-        public Voorstellingen GetVoorstelling(int id)
+        public Voorstellingen GetAgendaVoorstelling(int id)
                 {
                     // alle producten ophalen uit de database
                     var rows = DatabaseConnector.GetRows($"select * from voorstellingagenda INNER JOIN voorstellingen ON voorstellingagenda.voorstelling_id = voorstellingen.id WHERE voorstellingen.id = {id}");
@@ -220,7 +220,52 @@ namespace teeheeater.Controllers
 
                     return products[0];
                 }
-            
-        
+
+        public List<Voorstellingen> GetAllVoorstellingen()
+        {
+            // alle producten ophalen uit de database
+            var rows = DatabaseConnector.GetRows("select * from voorstellingen");
+
+            // lijst maken om alle producten in te stoppen
+            List<Voorstellingen> voorstellingen = new List<Voorstellingen>();
+
+            foreach (var row in rows)
+            {
+                Voorstellingen p = new Voorstellingen();
+                p.Naam = row["Naam"].ToString();
+                p.Beschrijving = row["Beschrijving"].ToString();
+                p.Foto = row["Foto"].ToString();
+                p.Id = Convert.ToInt32(row["id"]);
+
+                // en dat product voegen we toe aan de lijst met producten
+                voorstellingen.Add(p);
+            }
+
+            return voorstellingen;
+        }
+
+        public Voorstellingen GetVoorstelling(int id)
+        {
+            // alle producten ophalen uit de database
+            var rows = DatabaseConnector.GetRows($"select * from voorstellingen WHERE id = {id}");
+
+            // lijst maken om alle producten in te stoppen
+            List<Voorstellingen> products = new List<Voorstellingen>();
+
+            foreach (var row in rows)
+            {
+                // Voor elke rij maken we nu een product
+                Voorstellingen p = new Voorstellingen();
+                p.Naam = row["Naam"].ToString();
+                p.Beschrijving = row["Beschrijving"].ToString();
+                p.Foto = row["Foto"].ToString();
+                p.Id = Convert.ToInt32(row["id"]);
+
+                // en dat product voegen we toe aan de lijst met producten
+                products.Add(p);
+            }
+
+            return products[0];
+        }
     }
 }
