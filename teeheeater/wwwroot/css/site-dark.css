@@ -10,6 +10,106 @@ html, body {
     height: 100%;
 }
 
+#hash-symbol {
+    color: #484848;
+    font-size: 42px;
+    position: relative;
+    top: 4px;
+}
+
+#app-name {
+    color: #f19000;
+}
+
+section {
+    width: 250px;
+    margin: 100px auto;
+    padding: 60px;
+    background-color: #fff;
+    box-shadow: 0px 5px 35px #d7d7d7;
+    border-radius: 35px;
+}
+
+.toggle-btn {
+    position: relative;
+    width: 145px;
+    height: 74px;
+    margin: 0 auto;
+    border-radius: 40px;
+}
+
+input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+/* First toggle btn */
+
+#_1st-toggle-btn span {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: 50px;
+    overflow: hidden;
+    opacity: 1;
+    background-color: #fff;
+    box-shadow: 0px 2px 25px #d9d9d9;
+    border-radius: 40px;
+    transition: 0.2s ease background-color, 0.2s ease opacity;
+}
+
+    #_1st-toggle-btn span:before,
+    #_1st-toggle-btn span:after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        transition: 0.5s ease transform, 0.2s ease background-color;
+    }
+
+    #_1st-toggle-btn span:before {
+        background-color: #fff;
+        transform: translate(-58px, 0px);
+        z-index: 1;
+    }
+
+    #_1st-toggle-btn span:after {
+        background-color: #000;
+        transform: translate(8px, 0px);
+        z-index: 0;
+    }
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span {
+    background-color: #000;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:active + span {
+    opacity: 0.5;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span:before {
+    background-color: #000;
+    transform: translate(56px, -19px);
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span:after {
+    background-color: #fff;
+    transform: translate(79px, 0px);
+}
+
 /*HOMEPAGINA EN LAYOUT.CSHTML ======================================================================== */
 
 /*TEXTKOPJES ==============*/
@@ -21,7 +121,10 @@ h1 {
     line-height: 60px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    color: white;
 }
+
 
 h2 {
     font-family: Josefin Sans;
@@ -35,8 +138,8 @@ h2 {
     display: flex;
     align-content: flex-end;
     position: relative;
+    color: white;
 }
-
 
 /*HEADER=================*/
 
@@ -570,25 +673,6 @@ footer {
     margin: 35px;
 }
 
-
-h1 {
-    font-family: Josefin Sans;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #963F2D;
-}
-
-h2 {
-    font-family: Josefin Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 50px;
-    color: #FFFFFF;
-}
-
 a {
     text-decoration: none;
 }
@@ -604,19 +688,265 @@ p {
     color: #FFFFFF;
 }
 
-.overlay {
-    opacity: 0;
+/*AGENDA =========================================================================================== */
+/*================================================================================================== */
+
+.agendaBody {
     display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    padding: 5px;
+    background-color: #0f4746;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    height: 80%;
-    width: 50vw;
-    transition: 0.3s;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 60px;
 }
 
-    .overlay:hover {
-        opacity: 1;
+.agendaBtn {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    height: 170px;
+    width: 45vw;
+    padding: 10px;
+    background-color: rgb(12, 175, 169, 0.3);
+    color: white;
+    opacity: 1;
+    font-family: josefin sans;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    .agendaBtn:hover {
+        opacity: 0.7;
     }
+
+.agenda_img {
+    height: 100%;
+    width: 50%;
+    opacity: 1;
+    object-fit: cover;
+}
+
+.btnText {
+    padding: 10px;
+}
+
+/*VOORSTELLINGEN ==================================================================================== */
+/*================================================================================================== */
+
+.voorstellingtekst {
+    display: flex;
+    justify-content: center;
+    font-family: Open Sans;
+    font-size: 15px;
+    margin: 0;
+    line-height: 35px;
+    color: white;
+}
+
+.voorstelling_img {
+    height: 100%;
+    width: 50%;
+}
+
+.btnText {
+    padding: 10px;
+}
+
+.voorstellingenBody {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #d66809;
+}
+
+.voorstellingenBtn {
+    display: flex;
+    flex-direction: row;
+    height: 335px;
+    width: 45vw;
+    margin: 20px;
+    background-color: #f79239;
+    color: white;
+    font-family: josefin sans;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+    .voorstellingenBtn:hover {
+        background-color: #ed8528;
+    }
+
+/*detailpagina*/
+
+.voorstellingen_body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #FCCE8E;
+}
+
+.foto {
+    width: 50vw;
+}
+
+/*VOORSTELLINGENKAARTJES ============================================================================ */
+/*================================================================================================== */
+
+.voorstellingen_body {
+    background-color: #0f4746;
+    padding: 30px;
+    width: 100vw;
+}
+
+.voorstellingen__body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: rgba(12, 176, 171, 0.2);
+}
+
+.beschrijving {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 7%;
+}
+
+.foto {
+    width: 50vw;
+}
+
+.movie-container {
+    margin: 20px 0;
+}
+
+    .movie-container select {
+        background-color: #fff;
+        border: 0;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-left: 10px;
+        padding: 5px 15px 5px 15px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+
+.seat {
+    background-color: #0CAFA9;
+    height: 30px;
+    width: 30px;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+    .seat.selected {
+        background-color: #ED6F00;
+    }
+
+    .seat.occupied {
+        background-color: #BED8CF;
+    }
+
+    .seat:nth-of-type(2) {
+        margin-right: 18px;
+    }
+
+    .seat:nth-last-of-type(2) {
+        margin-left: 18px;
+    }
+
+    .seat:not(.occupied):hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+.showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+}
+
+.showcase {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .showcase li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+    }
+
+        .showcase li small {
+            margin-left: 2px;
+        }
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.screen {
+    background-color: #fff;
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+p.text {
+    margin: 10px;
+}
+
+    p.text span {
+        color: #ED6F00;
+    }
+
+/*VOORSTELLINGENKAARTJES ============================================================================ */
+/*================================================================================================== */
+
+.contact_body {
+    background-color: #572117;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+input[type="submit" i] {
+    width: 150px;
+    height: 39px;
+    left: 1133px;
+    top: 6px;
+    background: #ED6F00;
+    color: white;
+    font-family: Open Sans;
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+    transition: 0.3s;
+}
+
+    input[type="submit" i]:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+.contactForm label {
+    color: white;
+    font-family: Open Sans;
+}
+
+.contactForm {
+    color: white;
+    font-family: Open Sans;
+}

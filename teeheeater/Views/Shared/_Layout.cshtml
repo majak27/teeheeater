@@ -25,13 +25,25 @@
 
 <body>
 
-    <button class="btn-toggle">Toggle</button>
+    @*<div class='toggle-switch'>
+        <label>
+            <button class="btn-toggle">
+                <input type='checkbox'>
+                <span class='slider'></span>
+            </button>
+        </label>
+    </div>*@
+
     <header>
         <a href="/" class="logo">
             <div>
                 <img src="~/img/logo.png" class="logo">
             </div>
         </a>
+        <button class="toggle-btn" id="_1st-toggle-btn">
+            <input type="checkbox">
+            <span class='slider'></span>
+        </button>
         <div class="nav">
             <a class="btn" href="/">home</a>
             <a class="btn" href="/nieuws">nieuws</a>
@@ -88,20 +100,21 @@
     @RenderSection("script", true)
 
 
-<script>let x = document.cookie;
-    const btn = document.querySelector(".btn-toggle");
-    const theme = document.querySelector("#theme-link");
-    btn.addEventListener("click", function () {
-        // Swap out the URL for the different stylesheets
-        //localStorage.getItem("theme");
-        if (theme.getAttribute("href") == "/css/site-dark.css") {
-            theme.href = "/css/site-light.css";
-            document.cookie = "theme-light";
-        } else {
-            theme.href = "/css/site-dark.css";
-        }
-        //localStorage.setItem("theme", theme.href);
-    });</script>
+    <script>let x = document.cookie;
+        const btn = document.querySelector(".toggle-btn");
+        const theme = document.querySelector("#theme-link");
+        btn.addEventListener("click", function () {
+            // Swap out the URL for the different stylesheets
+            //localStorage.getItem("theme");
+
+            if (theme.getAttribute("href") == "/css/site-dark.css") {
+                theme.href = "/css/site-light.css";
+                document.cookie = "theme-light";
+            } else {
+                theme.href = "/css/site-dark.css";
+            }
+            //localStorage.setItem("theme", theme.href);
+        });</script>
 
 </body>
 </html>
