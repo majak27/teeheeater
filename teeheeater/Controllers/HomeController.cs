@@ -108,12 +108,6 @@ namespace teeheeater.Controllers
             return View();
         }
 
-        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        //public IActionResult Error()
-        //{
-        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        //}
-
         static string ComputeSha256Hash(string rawData)
         {
             // Create a SHA256   
@@ -146,22 +140,6 @@ namespace teeheeater.Controllers
             if (wachtwoord == "geheim")
             {
                 HttpContext.Session.SetString("User", username);
-                //return Redirect("/");
-                // hash voor "wachtwoord"
-               // string hash = "dc00c903852bb19eb250aeba05e534a6d211629d77d055033806b783bae09937";
-
-                // is er een wachtwoord ingevoerd?
-                //if (!string.IsNullOrWhiteSpace(wachtwoord))
-                //{
-
-                //    //Er is iets ingevoerd, nu kunnen we het wachtwoord hashen en vergelijken met de hash "uit de database"
-                //    //string hashVanIngevoerdWachtwoord = ComputeSha256Hash(wachtwoord);
-                //    if (hashVanIngevoerdWachtwoord == hash)
-                //    {
-                //        HttpContext.Session.SetString("User", username);
-                //        return Redirect("/");
-                //    }
-                //}
 
                 return View();
 
@@ -246,29 +224,5 @@ namespace teeheeater.Controllers
 
             return voorstellingen;
         }
-
-        //public Voorstellingen GetVoorstelling(int id)
-        //{
-        //    // alle producten ophalen uit de database
-        //    var rows = DatabaseConnector.GetRows($"select * from voorstellingen WHERE id = {id}");
-
-        //    // lijst maken om alle producten in te stoppen
-        //    List<Voorstellingen> products = new List<Voorstellingen>();
-
-        //    foreach (var row in rows)
-        //    {
-        //        // Voor elke rij maken we nu een product
-        //        Voorstellingen p = new Voorstellingen();
-        //        p.Naam = row["Naam"].ToString();
-        //        p.Beschrijving = row["Beschrijving"].ToString();
-        //        p.Foto = row["Foto"].ToString();
-        //        p.Id = Convert.ToInt32(row["id"]);
-
-        //        // en dat product voegen we toe aan de lijst met producten
-        //        products.Add(p);
-        //    }
-
-        //    return products[0];
-        //}
     }
 }

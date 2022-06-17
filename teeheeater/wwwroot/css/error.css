@@ -1,0 +1,28 @@
+﻿h1 {
+    color: #0CAFA9;
+}
+
+h2 {
+    color: #0CAFA9;
+}
+
+.breadcrumbs__link {
+    text-decoration: none;
+    color: #BED8CF;
+}
+
+.breadcrumbs__link--active {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0CAFA9;
+}
+
+.agendaBody {
+    height: 50vw;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: #0CAFA9;
+}
