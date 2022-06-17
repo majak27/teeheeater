@@ -17,6 +17,8 @@ namespace teeheeater.Database
 
         public string Datum { get; set; }
 
-        public string Tijd { get; set;  }
+        public string Tijd { get; set; }
+
+        public int Ticketvoorraad { get; set; }
     }
 }

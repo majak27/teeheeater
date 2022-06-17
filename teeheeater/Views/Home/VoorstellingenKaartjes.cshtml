@@ -8,7 +8,7 @@
 
 @section script{
     <link href="~/css/site-light.css" rel="stylesheet" id="theme-link">
-    <script src="script.js"></script>
+    <link href="~/css/agenda.css" rel="stylesheet">
 }
 
 <div class="voorstellingen_body">
@@ -17,6 +17,7 @@
             <img src="@Model.Foto" class="foto">
         </div>
         <div class="beschrijving">
+            <h2>@Model.Naam</h2>
             <h3>Selecteer je plaatsen</h3>
             <p>@Model.Datum @Model.Tijd</p>
             <div class="movie-container">
@@ -183,6 +184,7 @@
             e.target.classList.toggle('selected');
 
             updateSelectedCount();
+            localStorage.clear();
         }
     });
 

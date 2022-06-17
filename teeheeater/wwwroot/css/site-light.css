@@ -111,64 +111,6 @@ input[type="checkbox"] {
     transform: translate(79px, 0px);
 }
 
-/*:root {
-    --light: #d8dbe0;
-    --dark: #28292c;
-    --link: rgb(27, 129, 112);
-    --link-hover: rgb(24, 94, 82);
-}
-
-.toggle-switch {
-    position: relative;
-    width: 200px;
-}
-
-.btn-toggle {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    background-color: var(--dark);
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-input {
-    position: absolute;
-    display: none;
-}
-
-.slider {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    transition: 0.3s;
-}
-
-input:checked ~ .slider {
-    background-color: var(--light);
-}
-
-.slider::before {
-    content: "";
-    position: absolute;
-    top: 13px;
-    left: 16px;
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    box-shadow: inset 28px -4px 0px 0px var(--light);
-    background-color: var(--dark);
-    transition: 0.3s;
-}
-
-input:checked ~ .slider::before {
-    transform: translateX(95px);
-    background-color: var(--dark);
-    box-shadow: none;
-}
-*/
-
 /*HOMEPAGINA EN LAYOUT.CSHTML ======================================================================== */
 /*================================================================================================== */
 
@@ -304,7 +246,7 @@ input[type=text] {
 .breadcrumbs__link--active {
     text-decoration: none;
     font-weight: bold;
-    color: #ED6F00;
+    color: #963F2D;
 }
 
 /*INDEX BODY =============*/
@@ -799,7 +741,6 @@ p {
     width: 100vw;
     padding: 5px;
     background-color: #BED8CF;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -1058,4 +999,14 @@ input[type="submit" i] {
 .contactForm {
     color: white;
     font-family: Open Sans;
+}
+
+/*responsive maken*/
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
 }

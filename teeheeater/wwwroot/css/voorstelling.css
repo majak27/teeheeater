@@ -1,0 +1,19 @@
+﻿h1 {
+    color: #ED6F00;
+}
+
+h2 {
+    color: #0CAFA9;
+}
+
+.breadcrumbs__link {
+    text-decoration: none;
+    color: #FCCE8E;
+    opacity: 0.4;
+}
+
+.breadcrumbs__link--active {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ED6F00;
+}
